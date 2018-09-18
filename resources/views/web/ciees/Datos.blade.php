@@ -16,7 +16,7 @@
     </header>
     <div class="table-responsive">
         <table class="table table-striped table-bordered tabled-condensed table-hover">
-
+        @foreach($guia as $dato)
             <thead class="thead-dark">
             <tr> {{method_field('PUT')}}
                 <th scope="col" colspan="2"><h4>Indicador</h4></th>
@@ -33,7 +33,7 @@
             </tbody>
             <thead class="thead-dark">
             <tr>
-                <th scope="col" colspan="2"><h4>Descripción</h4></th>
+                <th scope="col" colspan="2"><h4>Descripción</h4> {{$dato->descPunto}}</th>
             </tr>
             </thead>
             <tbody>
@@ -48,7 +48,7 @@
 
             <thead class="thead-dark">
             <tr>
-                <th scope="col" colspan="2"><h4>Instrucciones</h4></th>
+                <th scope="col" colspan="2"><h4>Instrucciones</h4>{{$dato->instrPunto}}</th>
             </tr>
             </thead>
             <tbody>
@@ -65,7 +65,9 @@
 
             <thead class="thead-dark">
             <tr>
-                <th scope="col" colspan="2"><h4>Valoración</h4></th>
+                <th scope="col" colspan="2"><h4>Valoración</h4>
+                    {{$dato->valorPunto}}
+                </th>
             </tr>
             </thead>
             <tbody>
@@ -82,7 +84,9 @@
 
             <thead class="thead-dark">
             <tr>
-                <th scope="col" colspan="2"><h4>Informacion Adicional</h4></th>
+                <th scope="col" colspan="2"><h4>Informacion Adicional</h4>
+                {{$dato->adiPunto}}
+                </th>
             </tr>
             </thead>
             <tbody>
@@ -120,9 +124,11 @@
 
             {{csrf_field()}}
 </tr>
-
+@endforeach
         </table>
     </div>
+                                    </div>
+                            </div>
 </form>
 
             </div>

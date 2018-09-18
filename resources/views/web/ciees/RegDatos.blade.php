@@ -18,12 +18,13 @@
 
                 <h4>Indicador</h4>
 
-        <select name="indicador_id" class="form-control" id="guia" onblur="cargar_guia()">
+        <select  name="indicador" class="form-control" id="guia" onblur="cargar_guia();">
                             @foreach($indicadores as $indicador)
-                                <option id="indicador" value="{{$indicador->id}}">{{$indicador->id}}</option>
+                                <option  value="{{$indicador->id}}">{{$indicador->id}}</option>
                             @endforeach
-                        </select>
+        </select>
         <div id="guia">
+
 
         </div>
     </div>
@@ -33,9 +34,11 @@
         </article>
         <script>
             function cargar_guia() {
-                var indicador=document.getElementById("indicador").value;
+                var indicador = document.getElementById("guia").value;
+
                 console.log("id:"+indicador);
-                $("#guia").load('/Guia/'+indicador);
+
+                $("#guia").load('/Guia/1');
 
             }
         </script>
