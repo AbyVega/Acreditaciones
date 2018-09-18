@@ -99,4 +99,9 @@ class Indica12Contrl extends Controller
 
         return redirect('Ciees');
     }
+
+    public function mostrarGuia($id){
+        dd($id);
+
+    }
 }

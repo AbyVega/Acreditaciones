@@ -31,6 +31,8 @@ Route::resource('Fortaleza', 'FortalezaContrl');
 
 Route::resource('Oportunidad', 'OportunidadContrl');
 
+Route::get('Guia/{id}',['as' => 'Guia.mostrarGuia', 'uses' => 'Indica12Contrl@mostrarGuia']);
+
 Route::resource('Cat1','Cat1Contrl');
 Route::resource('Cat11','Cat11Contrl');
 Route::resource('Indica11','Indica11Contrl');

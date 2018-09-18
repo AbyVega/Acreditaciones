@@ -7,7 +7,7 @@
         <article class="container">
             <div class="row gtr-200">
 
-
+                <form action="{{route('Indica12.update', $consultas->id)}}" method="POST" enctype="application/x-www-form-urlencoded">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <header>
@@ -15,31 +15,120 @@
             </a></h2>
     </header>
     <div class="table-responsive">
+        <table class="table table-striped table-bordered tabled-condensed table-hover">
 
-                <h4>Indicador</h4>
+            <thead class="thead-dark">
+            <tr> {{method_field('PUT')}}
+                <th scope="col" colspan="2"><h4>Indicador</h4></th>
+            </tr>
+            </thead>
+            <tbody>
 
-        <select name="indicador_id" class="form-control" id="guia" onblur="cargar_guia()">
-                            @foreach($indicadores as $indicador)
-                                <option id="indicador" value="{{$indicador->id}}">{{$indicador->id}}</option>
-                            @endforeach
-                        </select>
-        <div id="guia">
+                <tr>
+                    <th scope="row" width="550">fdv</th>
+                    <th width="550">
+                        <input type="text" class="form-control" id="inputAddress" name="indicadores_id" value="{{$consultas->indicador_id}}" readonly>
+                    </th>
+                </tr>
+            </tbody>
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col" colspan="2"><h4>Descripción</h4></th>
+            </tr>
+            </thead>
+            <tbody>
 
-        </div>
+            <tr>
+                <th scope="row" width="150">
+                       </th>
+                <th>  <input type="text" class="form-control" id="inputAddress" name="descripcion" value="{{$consultas->descripcion}}">
+                </th>
+            </tr>
+            </tbody>
+
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col" colspan="2"><h4>Instrucciones</h4></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <th scope="row" width="150">
+
+
+                </th>
+                <th> <input type="text" class="form-control" id="inputAddress" name="instruccion" value="{{$consultas->instruccion}}">
+                </th>
+            </tr>
+            </tbody>
+
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col" colspan="2"><h4>Valoración</h4></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <th scope="row" width="150">
+
+
+                </th>
+                <th> <input type="text" class="form-control" id="inputAddress" name="valoracion" value="{{$consultas->valoracion}}"></th>
+            </tr>
+            </tbody>
+
+
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col" colspan="2"><h4>Informacion Adicional</h4></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <th scope="row" width="150">
+
+
+                </th>
+                <th> <input type="text" class="form-control" id="inputAddress" name="adicional" value="{{$consultas->adicional}}"></th>
+            </tr>
+            </tbody>
+
+
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col" colspan="2"><h4>Subir archivos</h4></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <th scope="row" width="150">
+
+
+                </th>
+                <th> <input type="text" class="form-control" id="inputAddress" name="documentos" value="{{$consultas->documentos}}"></th>
+            </tr>
+            </tbody>
+<th>
+           <th><button type="submit" class="btn btn-success">
+                <span class="glyphicon glyphicon-ok"></span></button>
+            <button type="reset" class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove"></span></button></th>
+
+            {{csrf_field()}}
+</tr>
+
+        </table>
     </div>
-                                </div>
-                            </div>
+</form>
+
             </div>
         </article>
-        <script>
-            function cargar_guia() {
-                var indicador=document.getElementById("indicador").value;
-                console.log("id:"+indicador);
-                $("#guia").load('/Guia/'+indicador);
-
-            }
-        </script>
     </article>
+
     <!-- Footer -->
     <div id="footer">
         <div class="container">
