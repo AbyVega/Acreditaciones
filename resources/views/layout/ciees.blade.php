@@ -26,7 +26,7 @@
 
 
 </head>
-<body>
+
 
 <body class="left-sidebar is-preload">
 <div id="page-wrapper">

@@ -1,47 +1,55 @@
 @extends('layout.ciees')
 @section('content')
 
+
+    <script >
+        function cargarAjax() {
+
+
+            var indicador = document.getElementById("guia").value;
+            console.log(":" + indicador);
+
+            $("#Guia").load('/Guia/' + indicador);
+        }
+    </script>
     <!-- Main -->
     <article class="wrapper style1">
 
         <article class="container">
-            <div class="row gtr-200">
+            <div class="text-center">
 
 
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
+                            <div class="text-center">
+                                <div class="text-center">
                                     <header>
-        <h2><a href="#">Autoevaluación de Programas de Educación Superior 2018
-            </a></h2>
-    </header>
-    <div class="table-responsive">
+                                         <h2>
+                                             <a href="#">Autoevaluación de Programas de Educación Superior 2018
+                                             </a>
+                                         </h2>
+                                    </header>
+                                 <div class="table-responsive">
 
-                <h4>Indicador</h4>
-
-        <select  name="indicador" class="form-control" id="guia" onblur="cargar_guia();">
-                            @foreach($indicadores as $indicador)
-                                <option  value="{{$indicador->id}}">{{$indicador->id}}</option>
-                            @endforeach
-        </select>
-        <div id="guia">
+                                         <h4>Indicador</h4>
 
 
-        </div>
-    </div>
+                                           <select style="width: 800px;"  name="indicador" class="form-control" id="guia" onblur="cargarAjax()">
+                                               <option value="">seleccione una opcion</option>
+                                                  @foreach($indicadores as $indicador)
+                                                 <option  value="{{$indicador->id}}">{{$indicador->id}}</option>
+                                                  @endforeach
+                                           </select>
+
+                                  </div>
                                 </div>
                             </div>
+
+                <div id="Guia">
+
+                </div>
+
+
             </div>
         </article>
-        <script>
-            function cargar_guia() {
-                var indicador = document.getElementById("guia").value;
-
-                console.log("id:"+indicador);
-
-                $("#guia").load('/Guia/1');
-
-            }
-        </script>
     </article>
     <!-- Footer -->
     <div id="footer">
