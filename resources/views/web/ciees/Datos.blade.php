@@ -32,53 +32,56 @@
         <article class="container">
             <div class="row gtr-200">
 
-                <form action="{{route('Indica12.update', $consultas->id)}}" method="POST" enctype="application/x-www-form-urlencoded">
+                <form action="{{route('Indica12.store')}}" method="POST" enctype="application/x-www-form-urlencoded">
                             <div class="form-row">
 
                       <div class="table-responsive">
                            <table class="table table-striped table-bordered tabled-condensed table-hover">
                                         @foreach($guia as $dato)
                                     <thead class="thead-dark">
-                                          <tr> {{method_field('PUT')}}
+                                          <tr>
                                                 <th scope="col" colspan="2"><h4>Indicador</h4></th>
                                            </tr>
                                     </thead>
                          <tbody>
 
                               <tr>
-                                    <th scope="row" width="550">fdv</th>
+                                    <th scope="row" width="550">Confirmar indicador selecionado</th>
                                     <th width="550">
-                                         <input type="text" class="form-control" id="inputAddress" name="indicadores_id" value="{{$consultas->indicador_id}}" readonly>
+                                        <select>
+                                            <option value="">seleccione una opcion</option>
+                                            @foreach($indicadores as $indicador)
+                                                <option value="{{$indicador->id}}">{{$indicador->indicador}}</option>
+                                            @endforeach
+
+                                        </select>
                                     </th>
                               </tr>
                            </tbody>
                                     <thead class="thead-dark">
                                           <tr>
-                                               <th scope="col" colspan="2"><h4>Descripción</h4> {{$dato->descPunto}}</th>
+                                               <th scope="col" colspan="2"><h4>Descripción</h4> </th>
                                           </tr>
                                     </thead>
                             <tbody>
 
                                  <tr>
-                                       <th scope="row" width="150"></th>
-                                      <th>  <input type="text" class="form-control" id="inputAddress" name="descripcion" value="{{$consultas->descripcion}}">
+                                       <th scope="row" width="150">{{$dato->descPunto}}</th>
+                                     <th>  <textarea class="form-control" id="inputAddress" name="descripcion"></textarea>
                                        </th>
                                  </tr>
                            </tbody>
 
             <thead class="thead-dark">
             <tr>
-                <th scope="col" colspan="2"><h4>Instrucciones</h4>{{$dato->instrPunto}}</th>
+                <th scope="col" colspan="2"><h4>Instrucciones</h4></th>
             </tr>
             </thead>
             <tbody>
 
             <tr>
-                <th scope="row" width="150">
-
-
-                </th>
-                <th> <input type="text" class="form-control" id="inputAddress" name="instruccion" value="{{$consultas->instruccion}}">
+                <th scope="row" width="150">{{$dato->instrPunto}} </th>
+                <th> <textarea class="form-control" id="inputAddress" name="instruccion"></textarea>
                 </th>
             </tr>
             </tbody>
@@ -86,18 +89,15 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col" colspan="2"><h4>Valoración</h4>
-                    {{$dato->valorPunto}}
+
                 </th>
             </tr>
             </thead>
             <tbody>
 
             <tr>
-                <th scope="row" width="150">
-
-
-                </th>
-                <th> <input type="text" class="form-control" id="inputAddress" name="valoracion" value="{{$consultas->valoracion}}"></th>
+                <th scope="row" width="150">{{$dato->valorPunto}} </th>
+                <th><textarea class="form-control" id="inputAddress" name="valoracion"></textarea></th>
             </tr>
             </tbody>
 
@@ -105,18 +105,14 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col" colspan="2"><h4>Informacion Adicional</h4>
-                {{$dato->adiPunto}}
                 </th>
             </tr>
             </thead>
             <tbody>
 
             <tr>
-                <th scope="row" width="150">
-
-
-                </th>
-                <th> <input type="text" class="form-control" id="inputAddress" name="adicional" value="{{$consultas->adicional}}"></th>
+                <th scope="row" width="150"> {{$dato->adiPunto}}</th>
+                <th> <textarea  class="form-control" id="inputAddress" name="adicional" ></textarea></th>
             </tr>
             </tbody>
 
@@ -130,10 +126,10 @@
 
             <tr>
                 <th scope="row" width="150">
-
+                    {{$dato->docPunto}}
 
                 </th>
-                <th> <input type="text" class="form-control" id="inputAddress" name="documentos" value="{{$consultas->documentos}}"></th>
+                <th> <input type="file" class="form-control" id="inputAddress" name="documentos"></th>
             </tr>
             </tbody>
 <th>

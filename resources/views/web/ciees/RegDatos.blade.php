@@ -29,15 +29,16 @@
                                     </header>
                                  <div class="table-responsive">
 
-                                         <h4>Indicador</h4>
+                                         <label><h4>Indicador</h4>
 
 
-                                           <select style="width: 800px;"  name="indicador" class="form-control" id="guia" onblur="cargarAjax()">
+                                           <select style="width: 1100px;"  name="indicador" class="form-control" id="guia" onchange="cargarAjax()">
                                                <option value="">seleccione una opcion</option>
                                                   @foreach($indicadores as $indicador)
-                                                 <option  value="{{$indicador->id}}">{{$indicador->id}}</option>
+                                                 <option value="{{$indicador->id}}">{{$indicador->indicador}}</option>
                                                   @endforeach
                                            </select>
+                                         </label>
 
                                   </div>
                                 </div>
