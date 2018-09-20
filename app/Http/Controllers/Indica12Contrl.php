@@ -101,11 +101,13 @@ class Indica12Contrl extends Controller
     }
 
     public function mostrarGuia($id){
+
+
         $consultas=Indica12Model::findOrFail($id);
         $guia = GuiaModel::where('indicador_id',$id)->get();
 
 
-        return view('web.ciees.Datos',compact('consultas','guia'));
+        return view('web.ciees.Datos',compact('consultas','guia','id'));
 
     }
 }

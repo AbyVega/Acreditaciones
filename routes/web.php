@@ -27,6 +27,7 @@ Route::resource('Usuarios', 'UsuariosContrl');
 
 Route::resource('Ciees','CieesContrl');
 
+
 Route::resource('Fortaleza', 'FortalezaContrl');
 
 Route::resource('Oportunidad', 'OportunidadContrl');
@@ -54,3 +55,7 @@ Route::resource('Cat5','Cat5Contrl');
 Route::resource('Cat51','Cat51Contrl');
 Route::resource('Cat52','Cat52Contrl');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
