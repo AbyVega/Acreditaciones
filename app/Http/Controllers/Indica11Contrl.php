@@ -6,7 +6,9 @@ use App\Http\Requests\UnRequest;
 use App\Indica11Model;
 use App\Indica12Model;
 use App\IndicadorModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+
 
 class Indica11Contrl extends Controller
 {
@@ -15,6 +17,12 @@ class Indica11Contrl extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        Carbon::setLocale('es');
+    }
+
     public function index()
     {
         $datos=Indica11Model::all();

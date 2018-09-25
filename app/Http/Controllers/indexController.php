@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Index;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -12,6 +13,12 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        Carbon::setLocale('es');
+    }
+
     public function index()
     {
         $datos = Index::all();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Indica12Model;
 use App\puntosEvalModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class Cat5Contrl extends Controller
@@ -13,6 +14,12 @@ class Cat5Contrl extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        Carbon::setLocale('es');
+    }
+
     public function index()
     {
         $consultas10=Indica12Model::all()->where('indicador_id',10.1);

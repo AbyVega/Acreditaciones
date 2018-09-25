@@ -6,6 +6,7 @@ use App\AreaModel;
 use App\PeModel;
 use App\TiposModel;
 use App\Usuarios;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class regiUsuContrl extends Controller
@@ -15,6 +16,12 @@ class regiUsuContrl extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        Carbon::setLocale('es');
+    }
+
     public function index()
     {
         $tipos=TiposModel::all();

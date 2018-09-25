@@ -1,6 +1,8 @@
 @extends('layout.home')
 @section('content')
 
+
+
     <body class="homepage is-preload">
     <div id="page-wrapper">
 
@@ -29,6 +31,7 @@
                     <li><a href="{{ route('Ciees.index')}}">Ciies</a></li>
                     <li><a href="{{ route('registros.index')}}">Registros</a></li>
                     <li><a href="{{ route('preguntas.index')}}">Contacto</a></li>
+                    <li><a href="{{ route('logout') }}">Cerrar</a></li>
 
                 </ul>
             </nav>
@@ -38,10 +41,9 @@
         <!-- Banner -->
         <section id="banner">
             <header>
-                <h2>Hi. You're looking at <strong>Helios</strong>.</h2>
+                <h2> <strong>SIGECE</strong>.</h2>
                 <p>
-                    A (free) responsive site template by <a href="http://html5up.net">HTML5 UP</a>.
-                    Built with HTML5/CSS3 and released under the <a href="http://html5up.net/license">CCA</a> license.
+                   Sistema para la Gestión de las Evaluaciones y Acreditaciones para la Calidad Educativa.
                 </p>
             </header>
         </section>
@@ -51,83 +53,141 @@
             <div class="reel">
 
                 <article>
-                    <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/cieess.jpg" alt="" /></a>
                     <header>
-                        <h3><a href="#">Pulvinar sagittis congue</a></h3>
+                        <h3><a href="#">Proposito</a></h3>
                     </header>
-                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                    <p>Coadyuvar al mejoramiento de la calidad de la educación superior en México.</p>
                 </article>
 
                 <article>
-                    <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/psicologia.png" alt="" /></a>
                     <header>
-                        <h3><a href="#">Fermentum sagittis proin</a></h3>
+                        <h3><a href="#">Lic. en Psicología</a></h3>
                     </header>
-                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                    <p>Los conocimientos que se promueven en el psicólogo se fundamentan en las bases filosóficas,
+                        epistemológicas, etc.</p>
                 </article>
 
                 <article>
-                    <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/social.jpg" alt="" /></a>
                     <header>
-                        <h3><a href="#">Sed quis rhoncus placerat</a></h3>
+                        <h3><a href="#">Lic. en Trabajo Social</a></h3>
                     </header>
-                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                    <p>Profesionales de las ciencias sociales
+                        su objetivo es mejorar la calidad de vida de un individuo.</p>
                 </article>
 
                 <article>
-                    <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/tecnologias.png" alt="" /></a>
                     <header>
-                        <h3><a href="#">Ultrices urna sit lobortis</a></h3>
+                        <h3><a href="#">Lic. en Tecnologías de la Información</a></h3>
                     </header>
-                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                    <p>Forma profesionistas capacitados para implementar y gestionar tecnologías.</p>
+                </article>
+                <article>
+                    <a href="#" class="image featured"><img src="images/derecho.png" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Lic. en Derecho</a></h3>
+                    </header>
+                    <p>Permite desarrollarse profesionalmente en el campo jurídico, con valores y principios ético.</p>
                 </article>
 
                 <article>
-                    <a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/electronica.png" alt="" /></a>
                     <header>
-                        <h3><a href="#">Varius magnis sollicitudin</a></h3>
+                        <h3><a href="#">Ing. en Electronica y Computación</a></h3>
                     </header>
-                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                    <p>Forma recursos humanos, calificados en desarrollos cientificos.</p>
+
+                </article>
+
+
+
+                <article>
+                    <a href="#" class="image featured"><img src="images/administracion.png" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Lic. en Administración</a></h3>
+                    </header>
+                    <p>Forma profesionales de calidad en el área de la administración con vocación emprendedora.</p>
                 </article>
 
                 <article>
-                    <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/agronegocios.png" alt="" /></a>
                     <header>
-                        <h3><a href="#">Pulvinar sagittis congue</a></h3>
+                        <h3><a href="#">Lic. en Agronegocios</a></h3>
                     </header>
-                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                    <p>Conjunto de recursos y procesos que hacen posible el aprovechamiento sustentable de la naturaleza.</p>
                 </article>
 
                 <article>
-                    <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/biologicos.png" alt="" /></a>
                     <header>
-                        <h3><a href="#">Fermentum sagittis proin</a></h3>
+                        <h3><a href="#">Ing. Sistemas Biologicos</a></h3>
                     </header>
-                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                    <p>Adquirir conocimientos científicos y tecnológicos necesarios para transformar
+                        materiales biológicos.</p>
                 </article>
-
                 <article>
-                    <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/conta.png" alt="" /></a>
                     <header>
-                        <h3><a href="#">Sed quis rhoncus placerat</a></h3>
+                        <h3><a href="#">Lic. Contaduria</a></h3>
                     </header>
-                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                    <p>Profesionista dedicado a la captación, proceso, interpretación y proyección de la
+                        información financiera.</p>
                 </article>
-
                 <article>
-                    <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/dise.png" alt="" /></a>
                     <header>
-                        <h3><a href="#">Ultrices urna sit lobortis</a></h3>
+                        <h3><a href="#">Ing. en Diseño Molecular de Materiales</a></h3>
                     </header>
-                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                    <p>Sintetizar y manipular las propiedades de materiales a diferentes escalas.</p>
                 </article>
-
                 <article>
-                    <a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+                    <a href="#" class="image featured"><img src="images/educacion.png" alt="" /></a>
                     <header>
-                        <h3><a href="#">Varius magnis sollicitudin</a></h3>
+                        <h3><a href="#">Lic. en Educación</a></h3>
                     </header>
-                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                    <p> forma profesionistas con las competencias esenciales para impactar en el desarrollo social.</p>
+                </article>
+                <article>
+                    <a href="#" class="image featured"><img src="images/enfermeria.png" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Nivelación Enfermeria</a></h3>
+                    </header>
+                    <p>Superación académica y profesional de la enfermera(o),
+                        ofreciendo un programa formativo de alta calidad.</p>
+                </article>
+                <article>
+                    <a href="#" class="image featured"><img src="images/geofisica.png" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Ing. en Geofísica</a></h3>
+                    </header>
+                    <p>Forma profesionales capaces de evaluar y solucionar problemas
+                       terrestres.</p>
+                </article>
+                <article>
+                    <a href="#" class="image featured"><img src="images/mecatronica.png" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Ing. Mecatrónica</a></h3>
+                    </header>
+                    <p>Disciplina integradora de las áreas de mecánica, electrónica e
+                        informática para mejorar procesos y sistemas.</p>
+                </article>
+                <article>
+                    <a href="#" class="image featured"><img src="images/nano.png" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Ing. en Instrumentación Electrónica y Nanosensores</a></h3>
+                    </header>
+                    <p>Aplicar conocimientos adquiridos en áreas de instrumentación.</p>
+                </article>
+                <article>
+                    <a href="#" class="image featured"><img src="images/turismo.png" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Lic. en Turismo</a></h3>
+                    </header>
+                    <p>Carrera multidisciplinar ya que se sirve de varias disciplinas que van desde
+                        las asignaturas cuánticas, sociales, etc.</p>
                 </article>
 
             </div>
@@ -137,12 +197,10 @@
         <div class="wrapper style2">
 
             <article id="main" class="container special">
-                <a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
                 <header>
-                    <h2><a href="#">Sed massa imperdiet magnis</a></h2>
+                    <h2><a href="#">SIGECE</a></h2>
                     <p>
-                        Sociis aenean eu aenean mollis mollis facilisis primis ornare penatibus aenean. Cursus ac enim
-                        pulvinar curabitur morbi convallis. Lectus malesuada sed fermentum dolore amet.
+                        Sistema para la Gestión de las Evaluaciones y Acreditaciones para la Calidad Educativa.
                     </p>
                 </header>
                 <p>
@@ -155,182 +213,27 @@
                     interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
                     natoque aenean scelerisque.
                 </p>
-                <footer>
-                    <a href="#" class="button">Continue Reading</a>
-                </footer>
+
             </article>
 
         </div>
 
-        <!-- Features -->
-        <div class="wrapper style1">
 
-            <section id="features" class="container special">
-                <header>
-                    <h2>Morbi ullamcorper et varius leo lacus</h2>
-                    <p>Ipsum volutpat consectetur orci metus consequat imperdiet duis integer semper magna.</p>
-                </header>
-                <div class="row">
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Gravida aliquam penatibus</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                            porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Sed quis rhoncus placerat</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                            porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Magna laoreet et aliquam</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-                            porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                </div>
-            </section>
-
-        </div>
 
         <!-- Footer -->
         <div id="footer">
-            <div class="container">
-                <div class="row">
-
-                    <!-- Tweets -->
-                    <section class="col-4 col-12-mobile">
-                        <header>
-                            <h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
-                        </header>
-                        <ul class="divided">
-                            <li>
-                                <article class="tweet">
-                                    Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
-                                    <span class="timestamp">5 minutes ago</span>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="tweet">
-                                    Hendrerit rutrum quisque.
-                                    <span class="timestamp">30 minutes ago</span>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="tweet">
-                                    Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
-                                    <span class="timestamp">3 hours ago</span>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="tweet">
-                                    Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
-                                    <span class="timestamp">5 hours ago</span>
-                                </article>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <!-- Posts -->
-                    <section class="col-4 col-12-mobile">
-                        <header>
-                            <h2 class="icon fa-file circled"><span class="label">Posts</span></h2>
-                        </header>
-                        <ul class="divided">
-                            <li>
-                                <article class="post stub">
-                                    <header>
-                                        <h3><a href="#">Nisl fermentum integer</a></h3>
-                                    </header>
-                                    <span class="timestamp">3 hours ago</span>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="post stub">
-                                    <header>
-                                        <h3><a href="#">Phasellus portitor lorem</a></h3>
-                                    </header>
-                                    <span class="timestamp">6 hours ago</span>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="post stub">
-                                    <header>
-                                        <h3><a href="#">Magna tempus consequat</a></h3>
-                                    </header>
-                                    <span class="timestamp">Yesterday</span>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="post stub">
-                                    <header>
-                                        <h3><a href="#">Feugiat lorem ipsum</a></h3>
-                                    </header>
-                                    <span class="timestamp">2 days ago</span>
-                                </article>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <!-- Photos -->
-                    <section class="col-4 col-12-mobile">
-                        <header>
-                            <h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
-                        </header>
-                        <div class="row gtr-25">
-                            <div class="col-6">
-                                <a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
-                            </div>
-                        </div>
-                    </section>
-
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="col-12">
+            <div class="containerF">
 
                         <!-- Contact -->
                         <section class="contact">
                             <header>
-                                <h3>Nisl turpis nascetur interdum?</h3>
+                                <h3></h3>
                             </header>
-                            <p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
-                            <ul class="icons">
-                                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                                <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-                                <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-                                <li><a href="#" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
-                            </ul>
+                            <p><img src="images/red.png"><br>
+                                CENTRO UNIVERSITARIO DE LOS VALLES<br>
+                             Carretera Guadalajara - Ameca Km. 45.5, C.P. 46600, Ameca, Jalisco, México.<br>
+                              Telefono: +52 (375) 7580 500 extensión. 9</p>
+
                         </section>
 
                         <!-- Copyright -->
@@ -342,7 +245,7 @@
 
                     </div>
 
-                </div>
+
             </div>
         </div>
 

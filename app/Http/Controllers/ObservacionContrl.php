@@ -6,6 +6,7 @@ use App\AreaModel;
 use App\puntosEvalModel;
 use App\ObservacionModel;
 use App\ProcessModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ObservacionContrl extends Controller
@@ -15,6 +16,12 @@ class ObservacionContrl extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        Carbon::setLocale('es');
+    }
+
     public function index()
     {
         $observaciones= ObservacionModel::all();

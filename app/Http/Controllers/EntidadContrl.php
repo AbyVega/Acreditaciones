@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\EntidadModel;
 use App\Http\Requests\EntidadRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EntidadContrl extends Controller
@@ -13,6 +14,12 @@ class EntidadContrl extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        Carbon::setLocale('es');
+    }
+
     public function index()
     {
         $entidades=(EntidadModel::all());

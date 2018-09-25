@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\GuiaModel;
 use App\Indica12Model;
 use App\IndicadorModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class Indica12Contrl extends Controller
@@ -13,6 +14,12 @@ class Indica12Contrl extends Controller
      * Display a listing of the resource.
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+       Carbon::setLocale('es');
+    }
+
     public function index()
     {
        $indicadores=IndicadorModel::all();
@@ -107,7 +114,8 @@ class Indica12Contrl extends Controller
         $guia = GuiaModel::where('indicador_id',$id)->get();
 
 
-        return view('web.ciees.Datos',compact('consultas','guia','id'));
+        return view('web.ciees.Datos',compact('consultas','guia', 'id'));
+
 
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AreaModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AreaContrl extends Controller
@@ -12,6 +13,12 @@ class AreaContrl extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        Carbon::setLocale('es');
+    }
+
     public function index()
     {
         $areas=AreaModel::all();

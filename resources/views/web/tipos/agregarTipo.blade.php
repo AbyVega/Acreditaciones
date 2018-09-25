@@ -12,8 +12,8 @@
 					</thead>
 					
 					<tr>
-					<td><input type="text" name="id"></td>
-					<td><input type="text" name="tipo"></td>
+					<td><input type="text" name="id" required></td>
+					<td><input type="text" name="tipo" required></td>
 					<td><button class="submit">enviar</button></td>
 					</tr>
 					

@@ -233,6 +233,14 @@ input, select, textarea, numer, date {
 		max-width: 100%;
 		width: 1400px;
 	}
+.containerF {
+	margin: 0 auto;
+	max-width: 100%;
+	width: 1400px;
+	height: 320px;
+	padding-left: 100px;
+	padding-top: 30px;
+}
 
 		@media screen and (max-width: 1680px) {
 
@@ -2531,14 +2539,14 @@ input, select, textarea, numer, date {
 	#footer {
 		position: relative;
 		overflow: hidden;
-		padding: 6em 0 6em 0;
-		background: #757577;
+
+		background: #7b7b7b;
 		color: #fff;
 	}
 
 		#footer .icon.circled {
 			background: #fff;
-			color: #2b252c;
+			color: #f4f4f4;
 		}
 
 		#footer header {
@@ -2555,14 +2563,14 @@ input, select, textarea, numer, date {
 		}
 
 			#footer .contact p {
-				text-align: center;
+				text-align: left;
 				margin: 0 0 3em 0;
 			}
 
 		#footer .copyright {
 			text-align: center;
 			color: rgba(0, 99, 173, 0.75);
-			font-size: 10 px;
+			font-size: 14px;
 			cursor: default;
 		}
 

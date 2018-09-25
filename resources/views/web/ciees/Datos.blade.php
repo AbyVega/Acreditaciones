@@ -46,15 +46,9 @@
                          <tbody>
 
                               <tr>
-                                    <th scope="row" width="550">Confirmar indicador selecionado</th>
+                                    <th scope="row" width="550"></th>
                                     <th width="550">
-                                        <select>
-                                            <option value="">seleccione una opcion</option>
-                                            @foreach($indicadores as $indicador)
-                                                <option value="{{$indicador->id}}">{{$indicador->indicador}}</option>
-                                            @endforeach
-
-                                        </select>
+                                        <input type="text" value="{{$id}}" name="indicador_id">
                                     </th>
                               </tr>
                            </tbody>

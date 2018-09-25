@@ -9,6 +9,7 @@ use App\PeModel;
 use App\ProcessModel;
 use App\TiposModel;
 use App\Usuarios;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class registrosContrl extends Controller
@@ -18,6 +19,12 @@ class registrosContrl extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        Carbon::setLocale('es');
+    }
+
     public function index()
     {
         $programas = PeModel::all();

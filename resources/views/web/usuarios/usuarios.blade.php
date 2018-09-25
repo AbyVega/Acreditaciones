@@ -21,28 +21,28 @@
                                 </tr>
                                 </thead>
                                 <tr>
-                                    <td class="bg-success"><input name="id" type="text" placeholder="Ej. 214508414"></td>
-                                    <td class="bg-success"><input name="nombre" type="text" placeholder="Ej. Sibel"></td>
-                                    <td class="bg-success"><input name="apePaterno" type="text" placeholder="Ej. Ortiz"></td>
-                                    <td class="bg-success"><input name="apeMaterno" type="text" placeholder="Ej. Ortiz"></td>
-                                    <td class="bg-success"><select name="tipos_id">
+                                    <td class="bg-success"><input name="id" type="number" placeholder="Ej. 214508414" required></td>
+                                    <td class="bg-success"><input name="nombre" type="text" placeholder="Ej. Sibel" required></td>
+                                    <td class="bg-success"><input name="apePaterno" type="text" placeholder="Ej. Ortiz" required></td>
+                                    <td class="bg-success"><input name="apeMaterno" type="text" placeholder="Ej. Ortiz" required></td>
+                                    <td class="bg-success"><select name="tipos_id" required>
                                             <option>Seleciona</option>
                                             @foreach($tipos as $tipo)
                                                 <option value="{{$tipo->id}}">{{$tipo->tipo}}</option>
                                             @endforeach
                                         </select>
                                     </td>
-                                    <td class="bg-success"><input name="email" type="email" placeholder="Ej. sibel@gmail.com"></td>
-                                    <td class="bg-success"><input name="password" type="password" placeholder="Password"></td>
+                                    <td class="bg-success"><input name="email" type="email" placeholder="Ej. sibel@gmail.com" required></td>
+                                    <td class="bg-success"><input name="password" type="password" placeholder="Password" required></td>
 
-                                    <td class="bg-success"><select name="area">
+                                    <td class="bg-success"><select name="area" required>
                                             <option>Seleciona</option>
                                             @foreach($areas as $area)
                                                 <option value="{{$area->id}}">{{$area->area}}</option>
                                             @endforeach
                                         </select>
                                     </td>
-                                    <td class="bg-success"><select name="programaEducativo_id">
+                                    <td class="bg-success"><select name="programaEducativo_id" required>
                                             <option>Selecciona</option>
                                             @foreach($programas as $programa)
                                                 <option value="{{$programa->id}}">{{$programa->nombre}}</option>

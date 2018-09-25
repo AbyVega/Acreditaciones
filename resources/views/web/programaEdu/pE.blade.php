@@ -23,10 +23,10 @@
             </tr>
             </thead>
             <tr>
-                <td class="bg-success"><input name="id" type="text" placeholder="Ej. 214508414"></td>
-                <td class="bg-success"><input name="nombre" type="text" placeholder="Ej. Administracion"></td>
-                <td class="bg-success"><input name="matricula" type="text" placeholder="Ej. 345"></td>
-                <td class="bg-success"><select name="evaluableCIEES">
+                <td class="bg-success"><input name="id" type="text" placeholder="Ej. 214508414" required></td>
+                <td class="bg-success"><input name="nombre" type="text" placeholder="Ej. Administracion" required></td>
+                <td class="bg-success"><input name="matricula" type="text" placeholder="Ej. 345" required></td>
+                <td class="bg-success"><select name="evaluableCIEES" required>
                         <option >Selecciona</option>
                         <option value="si">si</option>
                         <option value="no">no</option>
@@ -34,43 +34,43 @@
 
                     </select>
                 </td>
-                <td class="bg-success"><select name="evaluableCOPAES">
+                <td class="bg-success"><select name="evaluableCOPAES" required>
                         <option >Selecciona</option>
                         <option value="si">si</option>
                         <option value="no">no</option>
 
                     </select>
                 </td>
-                <td class="bg-success"><select name="evaluableInter">
+                <td class="bg-success"><select name="evaluableInter" required>
                         <option >Selecciona</option>
                         <option value="si">si</option>
                         <option value="no">no</option>
 
                     </select></td>
-                <td class="bg-success"><select name="status">
+                <td class="bg-success"><select name="status" required>
                         <option >Selecciona</option>
                         <option value="evaluable">Evaluable</option>
                         <option value="no evaluable">No evaluable</option>
 
                     </select>
                 </td>
-                <td class="bg-success"><select name="tipoPrograma">
+                <td class="bg-success"><select name="tipoPrograma" required>
                         <option >Selecciona</option>
                         <option value="licenciatura">Licenciatura</option>
                         <option value="nivelacion">Nivelación</option>
                     </select>
                 </td>
-                <td class="bg-success"><input name="fechaInicio" type="date" placeholder="12/05/2018"></td>
-                <td class="bg-success"><select name="calificacion">
+                <td class="bg-success"><input name="fechaInicio" type="date" placeholder="12/05/2018" required></td>
+                <td class="bg-success"><select name="calificacion" required>
                         <option >Selecciona</option>
                         <option value="E1">E1</option>
                         <option value="E2">E2</option>
                         <option value="E3">E3</option>
                     </select>
                 </td>
-                <td class="bg-success"><input name="fechaDictamen" type="date"></td>
-                <td class="bg-success"><input name="fechaVigencia" type="date"></td>
-                <td class="bg-success"><select name="calidad">
+                <td class="bg-success"><input name="fechaDictamen" type="date" required></td>
+                <td class="bg-success"><input name="fechaVigencia" type="date" required></td>
+                <td class="bg-success"><select name="calidad" required>
                         <option value="si">si</option>
                         <option value="no">no</option>
                     </select> </td>

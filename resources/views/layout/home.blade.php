@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
         <title>SIGECE</title>
+        <link rel="shortcut icon" src="{{asset('images/favicon.ico')}}" type="image/x-icon">
+        <link rel="icon" href=src="{{asset('images/favicon.ico')}}" type="image/x-icon">
+        <link rel="shortcut icon" src="{{asset('images/favicon.ico')}}">
         <noscript><link rel="stylesheet" type="text/css" href="{{asset('estilo/css/noscript.css')}}"></noscript>
         <link rel="stylesheet" type="text/css" href="{{asset('estilo/css/main.css')}}">
         <script src="{{asset('estilo/js/jquery.min.js')}}"></script>
@@ -19,6 +22,7 @@
 
 
     </head>
+
     <body>
       @yield('content') 
 

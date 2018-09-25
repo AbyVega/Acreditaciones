@@ -56,6 +56,10 @@ Route::resource('Cat51','Cat51Contrl');
 Route::resource('Cat52','Cat52Contrl');
 
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+
+Route::get('auth/logout', 'Auth\LoginController@logout')->name('logout');

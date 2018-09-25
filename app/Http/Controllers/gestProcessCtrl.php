@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\EntidadModel;
 use App\PeModel;
 use App\ProcessModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class gestProcessCtrl extends Controller
@@ -14,6 +15,12 @@ class gestProcessCtrl extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        Carbon::setLocale('es');
+    }
+
     public function index()
     {
         $programas=PeModel::all();
