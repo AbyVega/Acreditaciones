@@ -1,7 +1,14 @@
 @extends('layout.home')
 @section('content')
 
-
+    @if(session('toast'))
+<script>
+    toast_top({
+        type:'success',
+        title:'{{session('toast')}}'
+    })
+</script>
+@endif
 
     <body class="homepage is-preload">
     <div id="page-wrapper">
@@ -16,26 +23,39 @@
                     <hr />
                     <p>Centro Universitario de los Valles</p>
                 </header>
+                @if(Auth::guest())
                 <footer>
-                    <a href="#banner" class="button circled scrolly">Entrar</a>
+                    <a href="{{ route('login') }}" class="button circled scrolly">Entrar</a>
                 </footer>
+                    @endif
             </div>
 
             <!-- Nav -->
+            @if(!Auth::guest())
             <nav id="nav">
                 <ul>
+                    @if($usuario[0]->tipos_id == 1)
                     <li><a href="/">Inicio</a></li>
                     <li><a href="{{ route('acreditacion.index')}}">Acreditaciones</a>
                     </li>
                     <li><a href="{{ route('evaluaciones.index')}}">Evaluaciones</a></li>
+
+
                     <li><a href="{{ route('Ciees.index')}}">Ciies</a></li>
+
                     <li><a href="{{ route('registros.index')}}">Registros</a></li>
                     <li><a href="{{ route('preguntas.index')}}">Contacto</a></li>
                     <li><a href="{{ route('logout') }}">Cerrar</a></li>
+                        @endif
+                        @if($usuario[0]->tipos_id == 2)
+
+                            <li><a href="{{ route('Ciees.index')}}">Ciies</a></li>
+                            <li><a href="{{ route('logout') }}">Cerrar</a></li>
+                        @endif
 
                 </ul>
             </nav>
-
+            @endif
         </div>
 
         <!-- Banner -->
@@ -204,15 +224,22 @@
                     </p>
                 </header>
                 <p>
-                    Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
-                    posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
-                    sit arcu sociis. Nunc fermentum adipiscing tempor cursus nascetur adipiscing adipiscing. Primis aliquam
-                    mus lacinia lobortis phasellus suscipit. Fermentum lobortis non tristique ante proin sociis accumsan
-                    lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
-                    consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
-                    interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
-                    natoque aenean scelerisque.
+                <h4>Organsmos Evaluadores y acreditadores</h4>
+                    Dado que la evaluación y la acreditación nacen como procesos independientes,
+                    la evaluación en México, se institucionaliza a partir de la década de los 90 en que
+                    se establecen una serie de programas y organismos para evaluar y acreditar a la educación
+                    superior en México con diferentes finalidades.
+
                 </p>
+                <p><h4>Gestión de procesos de calidad</h4>
+                    Se le conoce como gestión de procesos a la planificación, depuración y control de los procesos de trabajo, son las actividades coordinadas para dirigir y controlar una organización en lo relativo a la calidad.
+                    La gestión de calidad se centra también en la satisfacción de los clientes y en los medios para obtenerlas, asimismo utiliza el aseguramiento de la calidad y el control de los procesos para obtener una calidad más consistente.
+                    La gestión de calidad permite: mejorar los procesos, Reducir desperdicios, bajar costos, facilitar oportunidades de capacitación del personal, genera compromiso entre el personal y establece la dirección adecuada de la organización.
+                </p>
+                <p><h4>Gestión de Información</h4>
+                       se encarga de todo lo relacionado con la obtención de información
+                       adecuada, en la forma correcta, para la persona indicada y en el momento oportuno, los objetivos principales de la gestión de la información son: maximizar el valor y los beneficios derivados del uso de la información, minimizar el costo de la adquisición, procesamiento y uso de la información, determinar responsabilidades para el uso efectivo, eficiente y económico de la información.
+                   </p>
 
             </article>
 
@@ -229,7 +256,7 @@
                             <header>
                                 <h3></h3>
                             </header>
-                            <p><img src="images/red.png"><br>
+                            <p><img src="images/Redd.png" height="80" width="280"><br>
                                 CENTRO UNIVERSITARIO DE LOS VALLES<br>
                              Carretera Guadalajara - Ameca Km. 45.5, C.P. 46600, Ameca, Jalisco, México.<br>
                               Telefono: +52 (375) 7580 500 extensión. 9</p>

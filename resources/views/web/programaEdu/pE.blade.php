@@ -19,7 +19,8 @@
             <th><h3><a>Calificación</a></h3></th>
             <th><h3><a>Fecha de dictamen</a></h3></th>
             <th><h3><a>Fecha de vigencia</a></h3></th>
-            <th colspan="2"><h3><a>Calidad</a></h3></th>
+            <th><h3><a>Calidad</a></h3></th>
+            <th></th>
             </tr>
             </thead>
             <tr>
@@ -71,6 +72,7 @@
                 <td class="bg-success"><input name="fechaDictamen" type="date" required></td>
                 <td class="bg-success"><input name="fechaVigencia" type="date" required></td>
                 <td class="bg-success"><select name="calidad" required>
+                        <option >Seleciona</option>
                         <option value="si">si</option>
                         <option value="no">no</option>
                     </select> </td>

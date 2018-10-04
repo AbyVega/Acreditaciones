@@ -24,7 +24,8 @@ class ObservacionContrl extends Controller
 
     public function index()
     {
-        $observaciones= ObservacionModel::all();
+        $observaciones= ObservacionModel::with('Area')->get();
+
         $procesos=ProcessModel::all();
         $indicadores=puntosEvalModel::all();
         $areas=AreaModel::all();
@@ -50,6 +51,13 @@ class ObservacionContrl extends Controller
      */
     public function store(Request $request)
     {
+        $time = $request['tiempoSolucion'];
+       $fecha= Carbon::now();
+       $fecha->addYear($time);
+
+      $request['fechaCompromiso']=$fecha;
+
+
         ObservacionModel::create($request->all());
 
         return redirect('Observacion');

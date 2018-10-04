@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Index;
+use App\Usuarios;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -22,9 +23,11 @@ class IndexController extends Controller
     public function index()
     {
         $datos = Index::all();
+        $user = Auth()->user()->email;
+        $usuario = Usuarios::where('email',$user)->get();
+        toast('!Sesión iniciada bienvenido'.Auth()->user()->name.'!','success','top');
 
-        //dd($datos);
-        return view('web.index',compact('datos'));
+        return view('web.index',compact('datos','usuario'));
     }
 
     /**

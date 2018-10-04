@@ -1782,6 +1782,7 @@ input, select, textarea, numer, date {
 
 	footer {
 		margin: 2.5em 0 0 0;
+
 	}
 
 /* Image */
@@ -2540,7 +2541,7 @@ input, select, textarea, numer, date {
 		position: relative;
 		overflow: hidden;
 
-		background: #7b7b7b;
+		background: #e6e6e6;
 		color: #fff;
 	}
 
@@ -2565,6 +2566,8 @@ input, select, textarea, numer, date {
 			#footer .contact p {
 				text-align: left;
 				margin: 0 0 3em 0;
+				color: #5b5b5b;
+
 			}
 
 		#footer .copyright {
@@ -3211,5 +3214,6 @@ input, select, textarea, numer, date {
 					.carousel article .image {
 						margin-bottom: 2em;
 					}
+
 
 	}

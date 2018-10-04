@@ -29,10 +29,13 @@ class registrosContrl extends Controller
     {
         $programas = PeModel::all();
         $tipos= TiposModel::all();
-        $usuarios=Usuarios::all();
+        $usuarios=Usuarios::with('Tipos', 'Area')->get();
+
         $entidades=EntidadModel::all();
-        $procesos=ProcessModel::all();
+        $procesos=ProcessModel::with('Entidad','Programa')->get();
+       // dd($procesos[0]->Entidad->nombre);
         $observaciones = ObservacionModel::all();
+
         $areas=AreaModel::all();
 
 

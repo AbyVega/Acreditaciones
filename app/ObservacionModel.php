@@ -15,18 +15,19 @@ class ObservacionModel extends Model
         'observaIncidencia',
         'tiempoSolucion',
         'fechaCompromiso',
-        'indicadores_id',
+        'puntosEvalu_id',
         'estadoIncidencia',
-        'Area_id'
+        'Area_id',
+        'proceso_id'
     ];
 
     public function indicadores()
     {
-        return $this->belongsTo(puntosEvalModel::class, 'id');
+        return $this->belongsTo(puntosEvalModel::class, 'id', 'id');
     }
 
-    public function areas()
+    public function Area()
     {
-        return $this->belongsTo(AreaModel::class, 'id');
+        return $this->belongsTo(AreaModel::class, 'Area_id', 'id');
     }
 }

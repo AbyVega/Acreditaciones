@@ -28,12 +28,13 @@ class ProcessModel extends Model
 
     public function Entidad()
     {
-        return $this->belongsTo(EntidadModel::class, 'id');
+        return $this->belongsTo(EntidadModel::class, 'entiAcreditadora_id','id');
     }
+
 
     public function Programa()
     {
-        return $this->belongsTo(PeModel::class, 'id');
+        return $this->belongsTo(PeModel::class, 'programaEducativo_id','id');
     }
 
 }

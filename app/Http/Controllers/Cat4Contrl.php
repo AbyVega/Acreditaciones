@@ -22,12 +22,12 @@ class Cat4Contrl extends Controller
 
     public function index()
     {
-        $consultas81=Indica12Model::all()->where('indicador_id',8.1);
-        $consultas82=Indica12Model::all()->where('indicador_id',8.2);
-        $consultas83=Indica12Model::all()->where('indicador_id',8.3);
-        $consultas84=Indica12Model::all()->where('indicador_id',8.4);
-        $consultas85=Indica12Model::all()->where('indicador_id',8.5);
-        $consultas86=Indica12Model::all()->where('indicador_id',8.6);
+        $consultas81=Indica12Model::all()->where('indicador_id',26);
+        $consultas82=Indica12Model::all()->where('indicador_id',27);
+        $consultas83=Indica12Model::all()->where('indicador_id',28);
+        $consultas84=Indica12Model::all()->where('indicador_id',29);
+        $consultas85=Indica12Model::all()->where('indicador_id',30);
+        $consultas86=Indica12Model::all()->where('indicador_id',31);
         $indicadores=puntosEvalModel::all();
 
         // dd($consultas);

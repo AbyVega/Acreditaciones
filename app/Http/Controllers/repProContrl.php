@@ -45,10 +45,7 @@ class repProContrl extends Controller
     public function store(Request $request)
     {
         ProcessModel::create($request->all());
-
-        dd($request);
-
-        redirect('registros');
+        return redirect('registros');
     }
 
     /**

@@ -65,8 +65,8 @@
         <td>{{$proceso->estadoPrograma}}</td>
         <td>{{$proceso->versionIntrumento}}</td>
         <td>{{$proceso->fechaInicio}}</td>
-        <td>{{$entidad->nombre}}</td>
-        <td>{{$programa->nombre}}</td>
+        <td>{{$proceso->Entidad->nombre}}</td>
+        <td>{{$proceso->Programa->nombre}}</td>
         <td>{{$proceso->statusFinanciero}}</td>
         <td>{{$proceso->FIPCuota}}</td>
         <td>{{$proceso->cuota}}</td>

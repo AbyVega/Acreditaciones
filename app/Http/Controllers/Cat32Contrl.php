@@ -22,8 +22,8 @@ class Cat32Contrl extends Controller
 
     public function index()
     {
-        $consultas71=Indica12Model::all()->where('indicador_id',7.1);
-        $consultas72=Indica12Model::all()->where('indicador_id',7.2);
+        $consultas71=Indica12Model::all()->where('indicador_id',24);
+        $consultas72=Indica12Model::all()->where('indicador_id',25);
 
         $indicadores=puntosEvalModel::all();
         return view('web.ciees.categorias.categoria32', compact('consultas71', 'consultas72', 'indicadores'));

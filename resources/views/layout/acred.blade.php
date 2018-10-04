@@ -42,7 +42,7 @@
                     <!-- Nav -->
                         <nav id="nav">
                             <ul>
-                                <li><a href="/">Inicio</a></li>
+                                <li><a href="Index">Inicio</a></li>
                                 <li>
                                     <a href="#">Procesos de acreditacion</a>
                                     <ul>
@@ -72,8 +72,39 @@
                         </nav>
 
                 </div>
-      @yield('content') 
+      @yield('content')
+
+        <!-- Footer -->
+            <div id="footer">
+                <div class="containerF">
+
+                    <!-- Contact -->
+                    <section class="contact">
+                        <header>
+                            <h3></h3>
+                        </header>
+                        <p><img src="images/Redd.png" height="80" width="280"><br>
+                            CENTRO UNIVERSITARIO DE LOS VALLES<br>
+                            Carretera Guadalajara - Ameca Km. 45.5, C.P. 46600, Ameca, Jalisco, México.<br>
+                            Telefono: +52 (375) 7580 500 extensión. 9</p>
+
+                    </section>
+
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        <ul class="menu">
+                            <li>&copy; Centro Universitario de los Valles</li><li>2018 <a href="/">SIGECE</a></li>
+                        </ul>
+                    </div>
+
+                </div>
 
 
-    </body>
+            </div>
+        </div>
+
+        </div>
+        </body>
 </html>
+
+

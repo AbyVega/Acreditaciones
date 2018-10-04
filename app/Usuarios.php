@@ -15,15 +15,14 @@ class Usuarios extends Model
         'apeMaterno',
         'tipos_id',
         'email',
-        'password',
         'Area_id',
         'programaEducativo_id'];
 
 public function Tipos()
 {
-    return $this->hasMany(TiposModel:: class,'id' );
+    return $this->belongsTo(TiposModel:: class,'tipos_id','id' );
 }
 public function Area(){
-    return $this->hasMany(AreaModel::class, 'id');
+    return $this->belongsTo(AreaModel::class, 'Area_id', 'id');
 }
 }

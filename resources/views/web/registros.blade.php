@@ -1,3 +1,4 @@
+
 @extends('layout.regis')
 @section('content')
 
@@ -102,6 +103,7 @@
         </div>
 
     </div>
+
 
     </ar>
     <br>

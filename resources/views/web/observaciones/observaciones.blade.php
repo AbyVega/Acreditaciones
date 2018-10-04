@@ -2,6 +2,25 @@
 @section('content')
     <!-- Main -->
 
+    <script>
+        function cargarFecha() {
+        var tiempo = document.getElementById("tiempoSolucion").value;
+        var date = new Date();
+        if(tiempo==1) {
+            date.setFullYear(date.getFullYear() + 1);
+        }
+            if(tiempo==2) {
+                date.setFullYear(date.getFullYear() + 2);
+            }
+            if(tiempo==3) {
+                date.setFullYear(date.getFullYear() + 3);
+            }
+        console.log(date);
+            var fecha = date.toLocaleDateString();
+            document.getElementById("fechaCompromiso").value=fecha;
+        }
+    </script>
+
     <div class="wrapper style1">
 
         <div class="container">
@@ -30,19 +49,20 @@
             </tr>
             </thead>
             <tr>
-                <td class="bg-success"><input name="id" type="hidden"></td>
-                <td class="bg-success"><select name="indicadores_id">
+                <td class="bg-success"><input name="proceso_id"  value="1"></td>
+                <td class="bg-success"><select name="puntosEvalu_id">
                         @foreach($indicadores as $indicador)
-                            <option value="{{$indicador->id}}">{{$indicador->indicador}}</option>
+                            <option value="1">1</option>
                         @endforeach
                     </select></td>
                 <td class="bg-success"><textarea name="observaIncidencia" type="text"></textarea></td>
-                <td class="bg-success"><select name="tiempoSolucion">
-                        <option>1 año</option>
-                        <option>2 años</option>
-                        <option>3 años</option>
+                <td class="bg-success"><select  id="tiempoSolucion"name="tiempoSolucion" onchange="cargarFecha()">
+                        <option>Seleccione una opcion</option>
+                        <option value="1">1 año</option>
+                        <option value="2">2 años</option>
+                        <option value="3">3 años</option>
                     </select></td>
-                <td class="bg-success"><input name="fechaCompromiso" type="date"></td>
+                <td class="bg-success"><input id="fechaCompromiso" name="fechaCompromiso" type="text"></td>
                 <td class="bg-success"><select name="Area_id">
                         @foreach($areas as $area)
                             <option value="{{$area->id}}">{{$area->area}}</option>
@@ -73,9 +93,9 @@
         <td>{{$observacion->id}}</td>
         <td>{{$indicador->indicador}}</td>
         <td>{{$observacion->observaIncidencia}}</td>
-        <td>{{$observacion->tiempoSolucion}}</td>
         <td>{{$observacion->fechaCompromiso}}</td>
-        <td>{{$area->area}}</td>
+        <td>{{$observacion->fechaCompromiso}}</td>
+        <td>{{$observacion->Area->area}}</td>
         <td>{{$observacion->estadoIncidencia}}</td>
         <td>
             <form id="delete_Observacion" action="{{route('Observacion.destroy', $observacion->id)}}" method="POST" >

@@ -22,9 +22,9 @@ class Cat31Contrl extends Controller
 
     public function index()
     {
-        $consultas61=Indica12Model::all()->where('indicador_id',6.1);
-        $consultas62=Indica12Model::all()->where('indicador_id',6.2);
-        $consultas63=Indica12Model::all()->where('indicador_id',6.3);
+        $consultas61=Indica12Model::all()->where('indicador_id',21);
+        $consultas62=Indica12Model::all()->where('indicador_id',22);
+        $consultas63=Indica12Model::all()->where('indicador_id',23);
         $indicadores=puntosEvalModel::all();
         return view('web.ciees.categorias.categoria31', compact('consultas61', 'consultas62', 'consultas63'
         , 'indicadores'));

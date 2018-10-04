@@ -1,6 +1,9 @@
-<form action="{{route('Usuarios.store')}}" method="POST">
+@include('sweetalert::alert')
+<form id="delete_form" action="{{route('Usuarios.store')}}" method="POST">
 
-                        <header>
+
+
+<header>
                             <h3><a>Usuarios</a></h3>
                         </header>
                         <div class="table-responsive">
@@ -15,7 +18,6 @@
                                     <th><h3><a>Apellido Materno</a></h3></th>
                                     <th><h3><a>Tipo de Usuario</a></h3></th>
                                     <th><h3><a>Email</a></h3></th>
-                                    <th><h3><a>Password</a></h3>
                                     <th><h3><a>Area</a></h3></th>
                                     <th colspan="2"><h3><a>Programa Educativo</a></h3></th>
                                 </tr>
@@ -25,7 +27,11 @@
                                     <td class="bg-success"><input name="nombre" type="text" placeholder="Ej. Sibel" required></td>
                                     <td class="bg-success"><input name="apePaterno" type="text" placeholder="Ej. Ortiz" required></td>
                                     <td class="bg-success"><input name="apeMaterno" type="text" placeholder="Ej. Ortiz" required></td>
-                                    <td class="bg-success"><select name="tipos_id" required>
+                                    <td class="bg-success">
+
+
+
+                                        <select name="tipos_id" required class="mb-3" >
                                             <option>Seleciona</option>
                                             @foreach($tipos as $tipo)
                                                 <option value="{{$tipo->id}}">{{$tipo->tipo}}</option>
@@ -33,9 +39,8 @@
                                         </select>
                                     </td>
                                     <td class="bg-success"><input name="email" type="email" placeholder="Ej. sibel@gmail.com" required></td>
-                                    <td class="bg-success"><input name="password" type="password" placeholder="Password" required></td>
 
-                                    <td class="bg-success"><select name="area" required>
+                                    <td class="bg-success"><select name="Area_id" required>
                                             <option>Seleciona</option>
                                             @foreach($areas as $area)
                                                 <option value="{{$area->id}}">{{$area->area}}</option>
@@ -54,25 +59,37 @@
                                             <span class="glyphicon glyphicon-ok"></span></button>
                                         <button type="reset" class="btn btn-danger">
                                             <span class="glyphicon glyphicon-remove"></span></button>
+
+
                                     </td>
                                     {{csrf_field()}}
                                 </tr>
+                            </form>
                                 <tr>
                                     <td colspan="10"><img src="images/formulario.png"  width="1200px" height="2px" /></td>
                                 </tr>
-                    @foreach($usuarios as $usuario)
 
+                    @foreach($usuarios as $usuario)
+                                    @if(session('alert'))
+                                        <div id="message" class="alert alert-success">
+                                            <a href="#" onclick="fadeMessage()" class="close" title="close">x</a>
+                                            {{session('alert')}}
+                                        </div>
+                                    @endif
                         <tr>
                             <td>{{$usuario->id}}</td>
                             <td>{{$usuario->nombre}}</td>
                             <td>{{$usuario->apePaterno}}</td>
                             <td>{{$usuario->apeMaterno}}</td>
-                            <td>{{$tipo->tipo}}</td>
+                            <td>{{$usuario->Tipos->tipo}}</td>
                             <td>{{$usuario->email}}</td>
-                            <td>{{$usuario->password}}</td>
-                            <td>{{$area->area}}</td>
+
+                            <td>{{$usuario->Area->area}}</td>
                             <td>{{$programa->nombre}}</td>
-                            <td><form id="delete_usuario" action="{{route('Usuarios.destroy', $usuario->id)}}" method="POST" >
+                            <td><form id="delete_form{{$usuario->id}}"  method="POST" onsubmit="return deleteElement(
+              '¿Está seguro de querer eliminar el evento {{$usuario->nombre}}?',
+              'delete_form_{{$usuario->id}}', event);
+              ">
                                     <a href="{{route('Usuarios.edit', $usuario->id)}}">
                                         <button type="button" class="btn btn-secondary">
                                             <span class="glyphicon glyphicon-pencil"></span></button>

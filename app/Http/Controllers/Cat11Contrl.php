@@ -23,10 +23,10 @@ class Cat11Contrl extends Controller
     public function index()
     {
         $consultas21=Indica12Model::all();
-        $consultas22=Indica12Model::all()->where('indicador_id',2.2);
-        $consultas23=Indica12Model::all()->where('indicador_id',2.3);
-        $consultas24=Indica12Model::all()->where('indicador_id',2.4);
-        $consultas25=Indica12Model::all()->where('indicador_id',2.5);
+        $consultas22=Indica12Model::all()->where('indicador_id',5);
+        $consultas23=Indica12Model::all()->where('indicador_id',6);
+        $consultas24=Indica12Model::all()->where('indicador_id',7);
+        $consultas25=Indica12Model::all()->where('indicador_id',8);
         $indicadores=puntosEvalModel::all();
 
         // dd($consultas);

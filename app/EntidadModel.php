@@ -10,7 +10,7 @@ class EntidadModel extends Model
 
 
 
-    protected $table = 'entiacreditadora';
+    protected $table = 'entiAcreditadora';
 
     protected $fillable = ['id','nombre','subOrganismo'];
 

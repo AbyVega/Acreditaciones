@@ -1,6 +1,8 @@
 <?php
 Route::get(' / ','Controller@index');
 
+Route::resource('Index','indexController');
+
 Route::resource('acreditacion','acreditacionContrl');
 
 Route::resource('evaluaciones','evaluacionController');
@@ -32,7 +34,7 @@ Route::resource('Fortaleza', 'FortalezaContrl');
 
 Route::resource('Oportunidad', 'OportunidadContrl');
 
-Route::get('Guia/{id}',['as' => 'Guia.mostrarGuia', 'uses' => 'Indica12Contrl@mostrarGuia']);
+
 
 Route::resource('Cat1','Cat1Contrl');
 Route::resource('Cat11','Cat11Contrl');
@@ -55,7 +57,7 @@ Route::resource('Cat5','Cat5Contrl');
 Route::resource('Cat51','Cat51Contrl');
 Route::resource('Cat52','Cat52Contrl');
 
-
+Route::get('Guia/{id}',['as' => 'Guia.mostrarGuia', 'uses' => 'Indica12Contrl@mostrarGuia']);
 
 Auth::routes();
 

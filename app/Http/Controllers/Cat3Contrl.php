@@ -22,9 +22,9 @@ class Cat3Contrl extends Controller
 
     public function index()
     {
-        $consultas51=Indica12Model::all()->where('indicador_id',5.1);
-        $consultas52=Indica12Model::all()->where('indicador_id',5.2);
-        $consultas53=Indica12Model::all()->where('indicador_id',5.3);
+        $consultas51=Indica12Model::all()->where('indicador_id',18);
+        $consultas52=Indica12Model::all()->where('indicador_id',19);
+        $consultas53=Indica12Model::all()->where('indicador_id',20);
          $indicadores=puntosEvalModel::all();
 
         // dd($consultas);

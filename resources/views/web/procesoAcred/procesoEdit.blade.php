@@ -83,8 +83,7 @@
                             </form>
 
 
-                    </div>
-            </div>
+
         </article>
         </div>
         </ul>

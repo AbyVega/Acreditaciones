@@ -22,11 +22,11 @@ class Cat2Contrl extends Controller
 
     public function index()
     {
-        $consultas31=Indica12Model::all();
-        $consultas32=Indica12Model::all()->where('indicador_id',3.2);
-        $consultas33=Indica12Model::all()->where('indicador_id',3.3);
-        $consultas34=Indica12Model::all()->where('indicador_id',3.4);
-        $consultas35=Indica12Model::all()->where('indicador_id',3.5);
+        $consultas31=Indica12Model::all()->where('indicador_id',9);
+        $consultas32=Indica12Model::all()->where('indicador_id',10);
+        $consultas33=Indica12Model::all()->where('indicador_id',11);
+        $consultas34=Indica12Model::all()->where('indicador_id',12);
+        $consultas35=Indica12Model::all()->where('indicador_id',13);
         $indicadores=IndicadorModel::all();
 
         // dd($consultas);
