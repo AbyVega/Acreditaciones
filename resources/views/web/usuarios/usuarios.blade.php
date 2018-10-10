@@ -85,7 +85,7 @@
                             <td>{{$usuario->email}}</td>
 
                             <td>{{$usuario->Area->area}}</td>
-                            <td>{{$programa->nombre}}</td>
+                            <td>{{$usuario->Programa->nombre}}</td>
                             <td><form id="delete_form{{$usuario->id}}"  method="POST" onsubmit="return deleteElement(
               '¿Está seguro de querer eliminar el evento {{$usuario->nombre}}?',
               'delete_form_{{$usuario->id}}', event);

@@ -28,7 +28,7 @@
 
                 <tr>
                     <th scope="row">{{$consulta25->id}}</th>
-                    <td>{{$consulta25->indicador_id}}</td>
+                    <td>{{$consulta25->Indicadores->indicador}}}</td>
                     <td>{{$consulta25->descripcion}}</td>
                     <td>{{$consulta25->instruccion}}</td>
                     <td>{{$consulta25->valoracion}}</td>

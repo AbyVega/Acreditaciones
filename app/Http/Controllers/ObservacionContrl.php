@@ -27,10 +27,11 @@ class ObservacionContrl extends Controller
         $observaciones= ObservacionModel::with('Area')->get();
 
         $procesos=ProcessModel::all();
-        $indicadores=puntosEvalModel::all();
+        $puntos=puntosEvalModel::all();
+       // dd($puntos);
         $areas=AreaModel::all();
 
-        return view('web.observaciones.observaciones',compact('observaciones', 'procesos', 'indicadores', 'areas'));
+        return view('web.observaciones.observaciones',compact('observaciones', 'procesos', 'puntos', 'areas'));
     }
 
     /**

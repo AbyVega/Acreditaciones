@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\CategoriasModel;
+use App\FortalezaModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -20,7 +22,10 @@ class FortalezaContrl extends Controller
 
     public function index()
     {
-        //
+        $categorias=CategoriasModel::all();
+
+        return view('web.ciees.Foda.RegFortaleza',compact('categorias'));
+
     }
 
     /**
@@ -41,7 +46,8 @@ class FortalezaContrl extends Controller
      */
     public function store(Request $request)
     {
-        //
+        FortalezaModel::create($request->all());
+        return redirect('Cat11');
     }
 
     /**
@@ -63,7 +69,9 @@ class FortalezaContrl extends Controller
      */
     public function edit($id)
     {
-        //
+        $fortalezas=FortalezaModel::findOrFail($id);
+        //$categorias=CategoriasModel::where('categoria_id', $id)->get();
+        return view('web.ciees.Foda.editFoda', compact('fortalezas', 'id'));
     }
 
     /**
@@ -75,7 +83,10 @@ class FortalezaContrl extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $fortalezas=FortalezaModel::findOrFail($id);
+        $categorias=CategoriasModel::all();
+        $fortalezas->update($request->all());
+        return redirect('Cat11');
     }
 
     /**
@@ -86,6 +97,9 @@ class FortalezaContrl extends Controller
      */
     public function destroy($id)
     {
-        //
+        $fortalezas=FortalezaModel::findOrFail($id);
+        $fortalezas->delete();
+        return redirect('Cat11');
+
     }
 }

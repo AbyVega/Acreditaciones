@@ -15,6 +15,8 @@
         <script src="{{asset('estilo/js/browser.min.js')}}"></script>
         <script src="{{asset('estilo/js/breakpoints.min.js')}}"></script>
         <script src="{{asset('estilo/js/util.js')}}"></script>
+        <script src="{{asset('js/highcharts.js')}}"></script>
+        <script src="{{asset('js/graficas.js')}}"></script>
         <script src="{{asset('estilo/js/main.js')}}"></script>
         <link rel="stylesheet" type="text/css" href="{{asset('estilo/css/bootstrap.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('estilo/css/bootstrap-theme.css')}}">

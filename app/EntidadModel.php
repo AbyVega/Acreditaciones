@@ -14,8 +14,5 @@ class EntidadModel extends Model
 
     protected $fillable = ['id','nombre','subOrganismo'];
 
-    public function Entidad()
-    {
-        return $this->hasMany(EntidadModel:: class,'id' );
-    }
+   
 }

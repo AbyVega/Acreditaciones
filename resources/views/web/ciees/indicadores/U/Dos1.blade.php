@@ -29,7 +29,7 @@
 
                 <tr>
                     <th scope="row">{{$consulta21->id}}</th>
-                    <td>{{$consulta21->indicador_id}}</td>
+                    <td>{{$consulta21->Indicadores->indicador}}</td>
                     <td>{{$consulta21->descripcion}}</td>
                     <td>{{$consulta21->instruccion}}</td>
                     <td>{{$consulta21->valoracion}}</td>

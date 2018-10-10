@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CategoriasModel;
 use App\GuiaModel;
 use App\Indica12Model;
 use App\IndicadorModel;
@@ -23,10 +24,12 @@ class Indica12Contrl extends Controller
     public function index()
     {
        $indicadores=IndicadorModel::all();
-        $consultas=Indica12Model::all();
+        $consultas=Indica12Model::with('Indicadores')->get();
         $guias=GuiaModel::all();
-//dd($indicadores);
-       return view('web.ciees.RegDatos', compact('consultas', 'indicadores', 'guias'));
+        $categorias=CategoriasModel::all();
+
+
+       return view('web.ciees.RegDatos', compact('consultas', 'indicadores', 'guias','categorias'));
     }
 
     /**
@@ -71,8 +74,9 @@ class Indica12Contrl extends Controller
     public function edit($id)
     {
         $consultas=Indica12Model::findOrFail($id);
+        $guia = GuiaModel::where('indicador_id',$id)->get();
 
-        return view('web.ciees.EditDatos', compact('consultas'));
+        return view('web.ciees.EditDatos', compact('consultas','guia', 'id'));
     }
 
     /**

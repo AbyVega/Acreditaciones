@@ -35,7 +35,7 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputPassword4"><h4>Versión del Instrumento</h4></label>
-                                                <input type="text" class="form-control" id="inputPassword4" name="versionInstrumento" value="{{$proceso->versionInstrumento}}">
+                                                <input type="text" class="form-control" id="inputPassword4" name="versionInstrumento" value="{{$proceso->versionIntrumento}}">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputPassword4"><h4>Fecha de Inicio</h4></label>

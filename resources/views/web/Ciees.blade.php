@@ -8,7 +8,7 @@
                 <div class="col-4 col-12-mobile" id="sidebar">
                     <hr class="first" />
                     <section>
-                        <a href="{{ route('Ciees.index')}}"><img src="images/ciees.jpg"></a>
+                        <a href="{{ route('ciees.ciees')}}"><img src="images/ciees.jpg"></a>
 
 
                             <ul>

@@ -15,7 +15,7 @@ class CategoriasModel extends Model
         'categoria',
         'ejes_id'
         ];
-public function ejes(){
-    return $this->belongsTo(EjesModel::class, 'id');
+public function Ejes(){
+    return $this->belongsTo(EjesModel::class, 'eje_id', 'id');
 }
 }

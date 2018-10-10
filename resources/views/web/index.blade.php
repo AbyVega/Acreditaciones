@@ -36,12 +36,12 @@
                 <ul>
                     @if($usuario[0]->tipos_id == 1)
                     <li><a href="/">Inicio</a></li>
-                    <li><a href="{{ route('acreditacion.index')}}">Acreditaciones</a>
+                    <li><a href="{{ route('acreditacion.Acreditacion')}}">Acreditaciones</a>
                     </li>
                     <li><a href="{{ route('evaluaciones.index')}}">Evaluaciones</a></li>
 
 
-                    <li><a href="{{ route('Ciees.index')}}">Ciies</a></li>
+                    <li><a href="{{ route('ciees.ciees')}}">Ciies</a></li>
 
                     <li><a href="{{ route('registros.index')}}">Registros</a></li>
                     <li><a href="{{ route('preguntas.index')}}">Contacto</a></li>
@@ -49,7 +49,7 @@
                         @endif
                         @if($usuario[0]->tipos_id == 2)
 
-                            <li><a href="{{ route('Ciees.index')}}">Ciies</a></li>
+                            <li><a href="{{ route('ciees.ciees')}}">Ciies</a></li>
                             <li><a href="{{ route('logout') }}">Cerrar</a></li>
                         @endif
 

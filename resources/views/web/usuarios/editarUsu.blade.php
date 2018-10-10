@@ -44,27 +44,25 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputEmail4"><h4>Tipo de Usuario</h4></label>
+
                                                 <input type="text" class="form-control" id="inputEmail4" name="tipos_id" required value="{{$usuarios->tipos_id}}">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputPassword4"><h4>Area a la que pertenece</h4></label>
-                                                <input type="text" class="form-control" id="inputPassword4" name="area" required value="{{$usuarios->area}}">
+                                                <input type="text" class="form-control" id="inputPassword4" name="area" required value="{{$usuarios->Area_id}}">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputPassword4"><h4>Programa educativo</h4></label>
+
                                                 <input type="text" class="form-control" id="inputPassword4" name="programaEducativo_id" required value="{{$usuarios->programaEducativo_id}}">
                                             </div>
 
-                                                <div class="form-group col-md-8">
+                                                <div class="form-group col-md-12">
                                                     <label for="inputCity"><h4>Email</h4></label>
                                                     <input type="email" class="form-control" id="inputCity" name="email" required value="{{$usuarios->email}}">
                                                 </div>
-                                                <div class="form-group col-md-4">
-                                                        <label for="inputCity"><h4>Password</h4></label>
-                                                        <input type="password" class="form-control" id="inputCity" name="password" required value="{{$usuarios->password}}">
-                                                    </div>
-                                                </div>
-                                            </div>
+
+
 
                                              <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
                                             <button type="reset" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>

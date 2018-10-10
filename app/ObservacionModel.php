@@ -21,9 +21,9 @@ class ObservacionModel extends Model
         'proceso_id'
     ];
 
-    public function indicadores()
+    public function Puntos()
     {
-        return $this->belongsTo(puntosEvalModel::class, 'id', 'id');
+        return $this->belongsTo(puntosEvalModel::class, 'puntosEvalu_id', 'id');
     }
 
     public function Area()

@@ -8,10 +8,10 @@ class puntosEvalModel extends Model
 {
     public $timestamps=false;
 
-    protected $table='puntosEvalu';
+    protected $table='puntosevalu';
 
     protected $fillable=[
         'id',
-        'incidencia'
+        'puntos'
     ];
 }

@@ -21,12 +21,14 @@
                             aria-expanded="false" aria-controls="multiCollapseExample5">Presupuesto/recurso <p>del programa</p> </button>
                     <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample4"
                             aria-expanded="false" aria-controls="multiCollapseExample6">Estructura organizacional <p>para operar el programa</p> </button>
+                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample7"
+                            aria-expanded="false" aria-controls="multiCollapseExample7">Analisis de categoria<p><br></p></button>
 
 
 
                     <button class="btn btn-success" type="button" data-toggle="collapse" data-target=".multi-collapse"
                             aria-expanded="false" aria-controls=" multiCollapseExample2 multiCollapseExample3
-                                multiCollapseExample4 multiCollapseExample5 multiCollapseExample6">Ocultar Elementos<p><br></p></button>
+                                multiCollapseExample4 multiCollapseExample5 multiCollapseExample6 multiCollapseExample7">Ocultar Elementos<p><br></p></button>
                     </p>
 
                     <div class="row">
@@ -88,6 +90,18 @@
                                 <div class="collapse multi-collapse" id="multiCollapseExample6">
                                     <div class="card card-body">
                                         @include ('web.ciees.indicadores.U.Dos5')
+                                    </div>
+
+                                </div>
+                            </div>
+                        </article>
+
+                        <!--cinco-->
+                        <article id="main">
+                            <div class="col">
+                                <div class="collapse multi-collapse" id="multiCollapseExample7">
+                                    <div class="card card-body">
+                                        @include ('web.ciees.Foda.Fortaleza')
                                     </div>
 
                                 </div>

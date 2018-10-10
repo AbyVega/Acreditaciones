@@ -25,4 +25,7 @@ public function Tipos()
 public function Area(){
     return $this->belongsTo(AreaModel::class, 'Area_id', 'id');
 }
+public function Programa(){
+    return $this->belongsTo(PeModel::class, 'programaEducativo_id', 'id');
+}
 }

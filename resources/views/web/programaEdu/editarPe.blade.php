@@ -75,7 +75,7 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputCity"><h4>Fecha de Vigencia</h4></label>
-                                            <input type="text" class="form-control" id="inputCity" name="fechaVigencia" value="{{$programas->fechaVijencia}}" required>
+                                            <input type="text" class="form-control" id="inputCity" name="fechaVigencia" value="{{$programas->fechaVigencia}}" required>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputCity"><h4>Calidad</h4></label>

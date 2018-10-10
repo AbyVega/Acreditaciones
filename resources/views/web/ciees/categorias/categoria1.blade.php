@@ -20,7 +20,7 @@
                         <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample5"
                                 aria-expanded="false" aria-controls="multiCollapseExample5">Perfil de egreso<p><br></p></button>
 
-                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target=".multi-collapse"
+                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target=".multi-collapse"
                                 aria-expanded="false" aria-controls=" multiCollapseExample2 multiCollapseExample3
                                 multiCollapseExample4 multiCollapseExample5 ">Ocultar Elementos<p><br></p></button>
                     </p>

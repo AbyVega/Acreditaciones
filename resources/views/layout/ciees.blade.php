@@ -48,33 +48,33 @@
                 <li>
                     <a href="#">Fundamentos de operación</a>
                     <ul>
-                        <li><a href="{{route('Cat1.index')}}">Propósitos del Programa</a></li>
-                        <li><a href="{{route('Cat11.index')}}">Condiciones generales de operación del programa</a></li>
+                        <li><a href="{{route('categoria.categoria1')}}">Propósitos del Programa</a></li>
+                        <li><a href="{{route('categoria.categoria11')}}">Condiciones generales de operación del programa</a></li>
                     </ul>
                 </li>
                 <li><a href="left-sidebar.html">Currículo</a>
                     <ul>
-                        <li><a href="{{route('Cat2.index')}}">Modelo educaativo y plan de estudios</a></li>
-                        <li><a href="{{route('Cat21.index')}}">Actividades para la formación integral</a></li>
+                        <li><a href="{{route('categoria.categoria2')}}">Modelo educaativo y plan de estudios</a></li>
+                        <li><a href="{{route('categoria.categoria21')}}">Actividades para la formación integral</a></li>
                     </ul>
                 <li><a href="left-sidebar.html">Tránsito de los estudiantes</a>
                     <ul>
-                        <li><a href="{{route('Cat3.index')}}">Proceso de ingreso al programa</a></li>
-                        <li><a href="{{route('Cat31.index')}}">Treayectoria escolar</a></li>
-                        <li><a href="{{route('Cat32.index')}}">Egreso del programa</a></li>
+                        <li><a href="{{route('categoria.categoria3')}}">Proceso de ingreso al programa</a></li>
+                        <li><a href="{{route('categoria.categoria31')}}">Treayectoria escolar</a></li>
+                        <li><a href="{{route('categoria.categoria32')}}">Egreso del programa</a></li>
 
                     </ul>
                 <li><a href="left-sidebar.html">Resultados</a>
                     <ul>
-                        <li><a href="{{route('Cat4.index')}}">Resultados de los estudiantes</a></li>
-                        <li><a href="{{route('Cat41.index')}}">Resultados del programa</a></li>
+                        <li><a href="{{route('categoria.categoria4')}}">Resultados de los estudiantes</a></li>
+                        <li><a href="{{route('categoria.categoria41')}}">Resultados del programa</a></li>
                     </ul>
                 </li>
                 <li><a href="left-sidebar.html">Personal académico</a>
                     <ul>
-                        <li><a href="{{route('Cat5.index')}}">Personal académico</a></li>
-                        <li><a href="{{route('Cat51.index')}}">Infrestructura académica</a></li>
-                        <li><a href="{{route('Cat52.index')}}">Servicios de apoyo</a></li>
+                        <li><a href="{{route('categoria.categoria5')}}">Personal académico</a></li>
+                        <li><a href="{{route('categoria.categoria51')}}">Infrestructura académica</a></li>
+                        <li><a href="{{route('categoria.categoria52')}}">Servicios de apoyo</a></li>
                     </ul>
                 </li>
                 <li><a href="left-sidebar.html">Analisis</a>

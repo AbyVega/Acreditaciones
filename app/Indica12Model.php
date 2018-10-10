@@ -22,6 +22,6 @@ class Indica12Model extends Model
 
     public function Indicadores()
     {
-        return $this->hasMany(IndicadorModel:: class,'id' );
+        return $this->belongsTo(IndicadorModel:: class,'indicador_id', 'id' );
     }
 }
