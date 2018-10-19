@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class puntosEvalModel extends Model
+class visitasModel extends Model
 {
     public $timestamps=false;
 
-    protected $table='puntosevalu';
-
+    protected $table='visitas';
     protected $fillable=[
-        'id',
-        'puntos'
+      'id',
+      'visitas'
     ];
+
 }

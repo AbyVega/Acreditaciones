@@ -65,7 +65,7 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
-input, textarea, numer, date {
+input, textarea, numer, date, search {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	-ms-appearance: none;
@@ -102,7 +102,7 @@ input, textarea, numer, date {
 			transition: none !important;
 		}
 
-	input, textarea, select, date, numer {
+	input, textarea, select, date, numer, search {
 		font-size: 15pt;
 		line-height: 1.85em;
 		font-family: 'Source Sans Pro', sans-serif;
@@ -1961,6 +1961,7 @@ input, textarea, numer, date {
 	form input[type="password"],
 	form input[type="number"],
 	form input[type="date"],
+	form input[type="search"],
 	form select,
 	form textarea {
 		-webkit-appearance: none;
@@ -2707,7 +2708,7 @@ input, textarea, numer, date {
 
 		/* Basic */
 
-			body, input, textarea, select, numer, date {
+			body, input, textarea, select, numer, date, search {
 				font-size: 14pt;
 				line-height: 1.75em;
 			}
@@ -2735,7 +2736,7 @@ input, textarea, numer, date {
 
 		/* Basic */
 
-			body, input, textarea, select, numer, date {
+			body, input, textarea, select, numer, date, search {
 				font-size: 12pt;
 				line-height: 1.5em;
 			}
@@ -2782,7 +2783,7 @@ input, textarea, numer, date {
 
 		/* Basic */
 
-			body, input, textarea, select, numer, date{
+			body, input, textarea, select, numer, date, search{
 				font-size: 13pt;
 				line-height: 1.65em;
 			}
@@ -2829,7 +2830,7 @@ input, textarea, numer, date {
 				overflow-x: hidden;
 			}
 
-			body, input, textarea, select, numer, date {
+			body, input, textarea, select, numer, date, search {
 				font-size: 12.5pt;
 				line-height: 1.5em;
 			}

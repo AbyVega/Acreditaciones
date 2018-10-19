@@ -9,6 +9,7 @@ use App\PeModel;
 use App\ProcessModel;
 use App\TiposModel;
 use App\Usuarios;
+use App\visitasModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -31,13 +32,14 @@ class registrosContrl extends Controller
         $tipos= TiposModel::all();
         $usuarios=Usuarios::with('Tipos', 'Area', 'Programa')->get();
         $entidades=EntidadModel::all();
-        $procesos=ProcessModel::with('Entidad','Programa')->get();
+        $procesos=ProcessModel::with('Entidad','Programa', 'Visitas')->get();
         $observaciones = ObservacionModel::all();
+        $visitas=visitasModel::all();
 
         $areas=AreaModel::all();
 
 
-        return view('web.registros',compact('programas','tipos', 'usuarios', 'entidades', 'procesos','observaciones', 'areas'));
+        return view('web.registros',compact('programas','tipos', 'usuarios', 'entidades', 'procesos','observaciones', 'areas', 'visitas'));
     }
 
     /**

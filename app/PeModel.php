@@ -12,8 +12,6 @@ class PeModel extends Model
         'status', 'tipoPrograma', 'fechaInicio', 'calificacion', 'fechaDictamen', 'fechaVigencia', 'calidad'];
 
 
-    public function Programa()
-    {
-        return $this->hasMany(PeModel:: class,'id' );
-    }
+
+
 }

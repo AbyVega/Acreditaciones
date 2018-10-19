@@ -1,4 +1,4 @@
-@include('sweetalert::alert')
+@include('sweet::alert')
 <form id="delete_form" action="{{route('Usuarios.store')}}" method="POST">
 
 
@@ -70,12 +70,7 @@
                                 </tr>
 
                     @foreach($usuarios as $usuario)
-                                    @if(session('alert'))
-                                        <div id="message" class="alert alert-success">
-                                            <a href="#" onclick="fadeMessage()" class="close" title="close">x</a>
-                                            {{session('alert')}}
-                                        </div>
-                                    @endif
+
                         <tr>
                             <td>{{$usuario->id}}</td>
                             <td>{{$usuario->nombre}}</td>
@@ -94,7 +89,7 @@
                                         <button type="button" class="btn btn-secondary">
                                             <span class="glyphicon glyphicon-pencil"></span></button>
                                     </a>
-                                    <button type="submit" class="btn btn-danger">
+                                    <button class="btn btn-danger">
                                         <span class="glyphicon glyphicon-trash"></span></button>
                                     <input name="_method" type="hidden" value="DELETE">
                                     {{csrf_field()}}

@@ -109,7 +109,30 @@
                 <th> <textarea  class="form-control" id="inputAddress" name="adicional" ></textarea></th>
             </tr>
             </tbody>
+                                   <thead class="thead-dark">
+                                   <tr>
+                                       <th scope="col" colspan="2"><h4>Asignar responsables</h4></th>
+                                   </tr>
+                                   </thead>
+                                   <tbody>
 
+                                   <tr>
+                                       <th scope="row" width="150">
+                                           {{$dato->responsables}}
+
+                                       </th>
+                                       <th><select name="puntosEvalu_id" required class="mb-3" >
+                                               <option>Seleciona</option>
+                                               @foreach($usuarios as $usuario)
+                                                   <option value="{{$usuario->email}}">{{$usuario->nombre}}</option>
+                                               @endforeach
+                                           </select>
+                                           <button type="submit" class="btn btn-success">
+                                               <span class="glyphicon glyphicon-envelope"></span></button> </th>
+
+                                   </tr>
+                                   </tbody>
+                                   <th>
 
             <thead class="thead-dark">
             <tr>
@@ -123,7 +146,7 @@
                     {{$dato->docPunto}}
 
                 </th>
-                <th> <input type="file" class="form-control" id="inputAddress" name="documentos"></th>
+                <th> <input type="file" class="form-control-file" id="inputAddress" name="documentos"></th>
             </tr>
             </tbody>
 <th>

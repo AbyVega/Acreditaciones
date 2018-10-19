@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PeModel;
 use App\reporteProcess;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -22,8 +23,8 @@ class reporteprocessContrl extends Controller
     public function index()
 
     {
-
-        return view('web.reporteProcesos');
+        $programas = PeModel::all();
+        return view('web.reporteProcesos',compact('programas'));
     }
 
     /**

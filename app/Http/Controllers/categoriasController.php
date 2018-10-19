@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\AreaModel;
 use App\CategoriasModel;
 use App\FortalezaModel;
 use App\Indica12Model;
-use App\puntosEvalModel;
+use App\IndicadorModel;
+use App\ObservacionModel;
+use App\PeModel;
+use App\ProcessModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -22,6 +26,11 @@ class categoriasController extends Controller
         return view('web.Ciees');
     }
 
+public function gestion(){
+    $procesos=ProcessModel::with('Entidad','Programa', 'Observacion')->get();
+    return view('web.gestionProcesos', compact( 'procesos'));
+}
+
     public function area()
     {
         $areas=AreaModel::all();
@@ -31,7 +40,21 @@ class categoriasController extends Controller
 
     public function Acreditacion()
     {
-        return view('web.acreditacion');
+        $programas=PeModel::all();
+        return view('web.acreditacion', compact('programas'));
+    }
+
+    public function gestionObserva(){
+
+        $observaciones= ObservacionModel::with('Area')->get();
+
+        $procesos=ProcessModel::all();
+        $puntos=IndicadorModel::all();
+        // dd($puntos);
+        $areas=AreaModel::all();
+
+        return view('web.gestionObserva',compact('observaciones', 'procesos', 'puntos', 'areas'));
+
     }
 
     public function categoria1()
@@ -40,7 +63,7 @@ class categoriasController extends Controller
         $consultas12=Indica12Model::with('Indicadores')->get()->where('indicador_id',2);
         $consultas13=Indica12Model::with('Indicadores')->get()->where('indicador_id',3);
         $consultas14=Indica12Model::with('Indicadores')->get()->where('indicador_id',4);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
 
         // dd($consultas);
         return view('web.ciees.categorias.categoria1', compact('consultas11', 'consultas12', 'consultas13', 'consultas14',
@@ -54,7 +77,7 @@ class categoriasController extends Controller
         $consultas23=Indica12Model::with('Indicadores')->get()->where('indicador_id',6);
         $consultas24=Indica12Model::with('Indicadores')->get()->where('indicador_id',7);
         $consultas25=Indica12Model::with('Indicadores')->get()->where('indicador_id',8);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
         $categorias=CategoriasModel::all();
         $fortalezas=FortalezaModel::all();
 
@@ -70,7 +93,7 @@ class categoriasController extends Controller
         $consultas33=Indica12Model::with('Indicadores')->get()->where('indicador_id',11);
         $consultas34=Indica12Model::with('Indicadores')->get()->where('indicador_id',12);
         $consultas35=Indica12Model::with('Indicadores')->get()->where('indicador_id',13);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
 
         // dd($consultas);
         return view('web.ciees.categorias.categoria2', compact('consultas31', 'consultas32', 'consultas33',
@@ -84,7 +107,7 @@ class categoriasController extends Controller
         $consultas43=Indica12Model::all()->where('indicador_id',15);
         $consultas44=Indica12Model::all()->where('indicador_id',16);
         $consultas45=Indica12Model::all()->where('indicador_id',17);
-        $categorias=CategoriasModel::all();
+        $indicadores=IndicadorModel::all();
         $fortalezas=FortalezaModel::all();
 
         // dd($consultas);
@@ -97,7 +120,7 @@ class categoriasController extends Controller
         $consultas51=Indica12Model::all()->where('indicador_id',18);
         $consultas52=Indica12Model::all()->where('indicador_id',19);
         $consultas53=Indica12Model::all()->where('indicador_id',20);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
 
         // dd($consultas);
         return view('web.ciees.categorias.categoria3', compact('consultas51', 'consultas52', 'consultas53',
@@ -109,7 +132,7 @@ class categoriasController extends Controller
         $consultas61=Indica12Model::all()->where('indicador_id',21);
         $consultas62=Indica12Model::all()->where('indicador_id',22);
         $consultas63=Indica12Model::all()->where('indicador_id',23);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
         return view('web.ciees.categorias.categoria31', compact('consultas61', 'consultas62', 'consultas63'
             , 'indicadores'));
     }
@@ -118,7 +141,7 @@ class categoriasController extends Controller
     {
         $consultas71=Indica12Model::all()->where('indicador_id',24);
         $consultas72=Indica12Model::all()->where('indicador_id',25);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
         $fortalezas=FortalezaModel::all();
         return view('web.ciees.categorias.categoria32', compact('consultas71', 'consultas72', 'indicadores', 'fortalezas'));
     }
@@ -131,7 +154,7 @@ class categoriasController extends Controller
         $consultas84=Indica12Model::all()->where('indicador_id',29);
         $consultas85=Indica12Model::all()->where('indicador_id',30);
         $consultas86=Indica12Model::all()->where('indicador_id',31);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
 
         // dd($consultas);
         return view('web.ciees.categorias.categoria4', compact('consultas81', 'consultas82', 'consultas83',
@@ -145,7 +168,7 @@ class categoriasController extends Controller
         $consultas93=Indica12Model::all()->where('indicador_id',34);
         $consultas94=Indica12Model::all()->where('indicador_id',35);
         $consultas95=Indica12Model::all()->where('indicador_id',36);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
         $fortalezas=FortalezaModel::all();
 
         // dd($consultas);
@@ -159,7 +182,7 @@ class categoriasController extends Controller
         $consultas101=Indica12Model::all()->where('indicador_id',38);
         $consultas102=Indica12Model::all()->where('indicador_id',39);
         $consultas103=Indica12Model::all()->where('indicador_id',40);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
 
         // dd($consultas);
         return view('web.ciees.categorias.categoria5', compact('consultas10', 'consultas101', 'consultas102',
@@ -173,7 +196,7 @@ class categoriasController extends Controller
         $consultas113=Indica12Model::all()->where('indicador_id',43);
         $consultas114=Indica12Model::all()->where('indicador_id',44);
         $consultas115=Indica12Model::all()->where('indicador_id',45);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
 
         // dd($consultas);
         return view('web.ciees.categorias.categoria51', compact('consultas111', 'consultas112', 'consultas113',
@@ -187,9 +210,8 @@ class categoriasController extends Controller
         $consultas123=Indica12Model::all()->where('indicador_id',48);
         $consultas124=Indica12Model::all()->where('indicador_id',49);
         $consultas125=Indica12Model::all()->where('indicador_id',50);
-        $indicadores=puntosEvalModel::all();
+        $indicadores=IndicadorModel::all();
         $fortalezas=FortalezaModel::all();
-        // dd($consultas);
         return view('web.ciees.categorias.categoria52', compact('consultas121', 'consultas122', 'consultas123',
             'consultas124', 'consultas125', 'indicadores', 'fortalezas'));
     }

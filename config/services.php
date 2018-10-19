@@ -15,18 +15,18 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => env('your-mailgun-domain'),
+        'secret' => env('your-mailgun-key'),
     ],
 
     'ses' => [
-        'key' => env('SES_KEY'),
-        'secret' => env('SES_SECRET'),
-        'region' => env('SES_REGION', 'us-east-1'),
+        'key' => env('your-ses-key'),
+        'secret' => env('your-ses-secret'),
+        'region' => env('ses-region', 'us-east-1'),
     ],
 
     'sparkpost' => [
-        'secret' => env('SPARKPOST_SECRET'),
+        'secret' => env('your-sparkpost-key'),
     ],
 
     'stripe' => [

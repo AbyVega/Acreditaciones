@@ -39,25 +39,46 @@
             <thead>
 
             <th><h3><a>No</a></h3></th>
+            <th><h3><a>Categoria</a></h3></th>
             <th><h3><a>Indicador</a></h3></th>
             <th><h3><a>Incidencia</a></h3></th>
+            <th><h3><a>Visita</a></h3></th>
+            <th><h3><a>Fecha</a></h3></th>
+            <th><h3><a>Acciónes a tomar</a></h3></th>
             <th><h3><a>Tiempo de Solución</a></h3></th>
             <th><h3><a>Fecha Compromiso</a></h3></th>
             <th><h3><a>Entidad Responsable</a></h3></th>
-            <th colspan="2"><h3><a></a>Estado de Incidencia</h3></th>
+            <th><h3><a></a>Estado de Incidencia</h3></th>
+            <th></th>
 
             </tr>
             </thead>
             <tr>
-                <td class="bg-success"><input name="proceso_id"type="number" readonly></td>
-                <td class="bg-success"><select name="tipos_id" required class="mb-3" >
+                <td class="bg-success"><input name="proceso_id"type="number" value="{{$id}}" readonly></td>
+                <td class="bg-success"><select name="categorias_id" required class="mb-3" >
+                        <option>Seleciona</option>
+                        @foreach($categorias as $categoria)
+                            <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+                        @endforeach
+                    </select>
+                </td>
+                <td class="bg-success"><select name="indicador_id" required class="mb-3" >
                 <option>Seleciona</option>
                 @foreach($puntos as $punto)
-                    <option value="{{$punto->id}}">{{$punto->$punto}}</option>
+                    <option value="{{$punto->id}}">{{$punto->indicador}}</option>
                     @endforeach
                     </select>
                 </td>
                 <td class="bg-success"><textarea name="observaIncidencia" type="text"></textarea></td>
+                <td class="bg-success"><select name="visitas_id" required class="mb-3" >
+                        <option>Seleciona</option>
+                        @foreach($visitas as $visita)
+                            <option value="{{$visita->id}}">{{$visita->visita}}</option>
+                        @endforeach
+                    </select>
+                </td>
+                <td class="bg-success"><input  name="fechaObserva" type="date" ></td>
+                <td class="bg-success"><textarea name="accionesTomar" type="text"></textarea></td>
                 <td class="bg-success"><select  id="tiempoSolucion"name="tiempoSolucion" onchange="cargarFecha()">
                         <option>Seleccione una opcion</option>
                         <option value="1">1 año</option>
@@ -65,6 +86,7 @@
                         <option value="3">3 años</option>
                     </select></td>
                 <td class="bg-success"><input id="fechaCompromiso" name="fechaCompromiso" type="text"></td>
+
                 <td class="bg-success"><select name="Area_id">
                         @foreach($areas as $area)
                             <option value="{{$area->id}}">{{$area->area}}</option>
@@ -95,6 +117,8 @@
         <td>{{$observacion->id}}</td>
         <td>{{$observacion->Puntos->puntos}}</td>
         <td>{{$observacion->observaIncidencia}}</td>
+        <td>{{$observacion->Visitas->visita}}</td>
+        <td>{{$observacion->fechaObserva}}</td>
         <td>{{$observacion->fechaCompromiso}}</td>
         <td>{{$observacion->fechaCompromiso}}</td>
         <td>{{$observacion->Area->area}}</td>

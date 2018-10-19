@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\AreaModel;
-use App\puntosEvalModel;
+use App\CategoriasModel;
+use App\IndicadorModel;
 use App\ObservacionModel;
 use App\ProcessModel;
+use App\visitasModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -24,15 +26,8 @@ class ObservacionContrl extends Controller
 
     public function index()
     {
-        $observaciones= ObservacionModel::with('Area')->get();
 
-        $procesos=ProcessModel::all();
-        $puntos=puntosEvalModel::all();
-       // dd($puntos);
-        $areas=AreaModel::all();
-
-        return view('web.observaciones.observaciones',compact('observaciones', 'procesos', 'puntos', 'areas'));
-    }
+          }
 
     /**
      * Show the form for creating a new resource.
@@ -61,7 +56,7 @@ class ObservacionContrl extends Controller
 
         ObservacionModel::create($request->all());
 
-        return redirect('Observacion');
+        return redirect('gestionObserva');
     }
 
     /**
@@ -116,4 +111,22 @@ class ObservacionContrl extends Controller
 
         return redirect('Observacion');
     }
+
+    public function llamaProceso($id){
+        $proceso= ProcessModel::findOrFail($id);
+    }
+
+    public function crearObservacion($id){
+        $observaciones= ObservacionModel::with('Area', 'Puntos', 'Categorias', 'Procesos')->get();
+        $procesos=ProcessModel::with('Entidad','Programa', 'Observacion')->get();
+        $puntos=IndicadorModel::all();
+        $visitas=visitasModel::all();
+        $areas=AreaModel::all();
+        $categorias=CategoriasModel::all();
+
+
+        return view('web.observaciones.observaciones',compact('observaciones', 'areas', 'categorias', 'procesos', 'puntos', 'visitas', 'id'));
+
+    }
+
 }

@@ -6,6 +6,7 @@ use App\CategoriasModel;
 use App\GuiaModel;
 use App\Indica12Model;
 use App\IndicadorModel;
+use App\Usuarios;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -27,9 +28,11 @@ class Indica12Contrl extends Controller
         $consultas=Indica12Model::with('Indicadores')->get();
         $guias=GuiaModel::all();
         $categorias=CategoriasModel::all();
+        $usuarios=Usuarios::all();
 
 
-       return view('web.ciees.RegDatos', compact('consultas', 'indicadores', 'guias','categorias'));
+       return view('web.ciees.RegDatos', compact('consultas', 'indicadores', 'guias',
+           'categorias', 'usuarios'));
     }
 
     /**
@@ -116,9 +119,10 @@ class Indica12Contrl extends Controller
 
         $consultas=Indica12Model::findOrFail($id);
         $guia = GuiaModel::where('indicador_id',$id)->get();
+        $usuarios=Usuarios::all();
 
 
-        return view('web.ciees.Datos',compact('consultas','guia', 'id'));
+        return view('web.ciees.Datos',compact('consultas','guia', 'id', 'usuarios'));
 
 
     }

@@ -22,7 +22,8 @@ class ProcessModel extends Model
         'viaticos',
         'material',
         'entiAcreditadora_id',
-        'programaEducativo_id'
+        'programaEducativo_id',
+        'visitas_id'
     ];
 
 
@@ -36,5 +37,11 @@ class ProcessModel extends Model
     {
         return $this->belongsTo(PeModel::class, 'programaEducativo_id','id');
     }
+    public function Visitas(){
+        return $this->belongsTo(visitasModel::class, 'visitas_id', 'id');
+    }
 
+    public function Observacion(){
+        return $this->hasMany(ObservacionModel::class, 'proceso_id', 'id');
+    }
 }

@@ -6,11 +6,21 @@
     toast_top({
         type:'success',
         title:'{{session('toast')}}'
+
     })
 </script>
 @endif
 
-    <body class="homepage is-preload">
+    <script type="text/javascript">
+        function nobackbutton(){
+            window.location.hash="no-back-button";
+            window.location.hash="Again-No-back-button" //chrome
+            window.onhashchange=function(){window.location.hash="no-back-button";}
+
+
+        }
+    </script>
+    <body class="homepage is-preload" onload="nobackbutton();">
     <div id="page-wrapper">
 
         <!-- Header -->
@@ -22,6 +32,7 @@
                     <h1><a href="index.html" id="logo">SIGECE</a></h1>
                     <hr />
                     <p>Centro Universitario de los Valles</p>
+
                 </header>
                 @if(Auth::guest())
                 <footer>
@@ -35,21 +46,21 @@
             <nav id="nav">
                 <ul>
                     @if($usuario[0]->tipos_id == 1)
-                    <li><a href="/">Inicio</a></li>
+                    <li><a href="Index">Inicio</a></li>
                     <li><a href="{{ route('acreditacion.Acreditacion')}}">Acreditaciones</a>
                     </li>
-                    <li><a href="{{ route('evaluaciones.index')}}">Evaluaciones</a></li>
+                    <!--<li><a href="route('evaluaciones.index'">Evaluaciones</a></li>-->
 
 
                     <li><a href="{{ route('ciees.ciees')}}">Ciies</a></li>
 
                     <li><a href="{{ route('registros.index')}}">Registros</a></li>
-                    <li><a href="{{ route('preguntas.index')}}">Contacto</a></li>
                     <li><a href="{{ route('logout') }}">Cerrar</a></li>
                         @endif
                         @if($usuario[0]->tipos_id == 2)
 
                             <li><a href="{{ route('ciees.ciees')}}">Ciies</a></li>
+                            <li><a href="{{ route('Observacion.index')}}">Observaciones</a></li>
                             <li><a href="{{ route('logout') }}">Cerrar</a></li>
                         @endif
 

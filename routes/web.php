@@ -3,10 +3,7 @@ Route::get(' / ','Controller@index');
 
 Route::resource('Index','indexController');
 
-Route::resource('evaluaciones','evaluacionController');
-
-Route::resource('preguntas','preguntaController');
-
+//Route::resource('evaluaciones','evaluacionController');
 Route::resource('Procesos','repProContrl');
 
 Route::resource('registros','registrosContrl');
@@ -21,8 +18,6 @@ Route::resource('registrarUsuarios', 'regiUsuContrl');
 
 Route::resource('reporteProcesos', 'reporteprocessContrl');
 
-Route::resource('gestion', 'gestProcessCtrl');
-
 Route::resource('Usuarios', 'UsuariosContrl');
 
 Route::resource('Fortaleza', 'FortalezaContrl');
@@ -33,6 +28,7 @@ Route::resource('Indica11','Indica11Contrl');
 Route::resource('Indica12', 'Indica12Contrl');
 
 Route::get('Guia/{id}',['as' => 'Guia.mostrarGuia', 'uses' => 'Indica12Contrl@mostrarGuia']);
+Route::get('Pross/{id}',['as' => 'Pross.llamaProceso', 'uses' => 'ObservacionContrl@llamaProceso']);
 Route::get('cat1',['as' => 'categoria.categoria1', 'uses' => 'categoriasController@categoria1']);
 Route::get('cat11',['as' => 'categoria.categoria11', 'uses' => 'categoriasController@categoria11']);
 Route::get('cat2',['as' => 'categoria.categoria2', 'uses' => 'categoriasController@categoria2']);
@@ -47,7 +43,9 @@ Route::get('cat51',['as' => 'categoria.categoria51', 'uses' => 'categoriasContro
 Route::get('cat52',['as' => 'categoria.categoria52', 'uses' => 'categoriasController@categoria52']);
 Route::get('acreditacion',['as' => 'acreditacion.Acreditacion', 'uses' => 'categoriasController@acreditacion']);
 Route::get('ciees',['as' => 'ciees.ciees', 'uses' => 'categoriasController@ciees']);
-
+Route::get('gestion',['as' => 'gestion.gestion', 'uses' => 'categoriasController@gestion']);
+Route::get('crearObservacion/{id}',['as' => 'Observacion.crearObservacion', 'uses' => 'ObservacionContrl@crearObservacion']);
+Route::get('gestionObserva',['as' => 'Observaciones.gestionObserva', 'uses' => 'categoriasController@gestionObserva']);
 
 //Route::get('area',['as' => 'area.area', 'uses' => 'categoriasController@area']);
 Auth::routes();

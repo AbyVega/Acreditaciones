@@ -24,4 +24,6 @@ class Indica12Model extends Model
     {
         return $this->belongsTo(IndicadorModel:: class,'indicador_id', 'id' );
     }
+
+
 }

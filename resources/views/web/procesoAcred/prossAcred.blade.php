@@ -14,6 +14,7 @@
             <th><h3><a>Fecha de Inicio</a></h3></th>
             <th><h3><a>Entidad Acreditadora</a></h3></th>
             <th><h3><a>Programa Educativo</a></h3></th>
+            <th><h3><a>Visita</a></h3></th>
             <th><h3><a></a>Status Financiero</h3></th>
             <th><h3><a></a>FIP de Cuota</h3></th>
             <th><h3><a>Cuota</a></h3></th>
@@ -37,6 +38,11 @@
                 <td class="bg-success"><select name="programaEducativo_id">
                         @foreach($programas as $programa)
                             <option value="{{$programa->id}}">{{$programa->nombre}}</option>
+                        @endforeach
+                    </select></td>
+                <td class="bg-success"><select name="visita_id">
+                        @foreach($visitas as $visita)
+                            <option value="{{$visita->id}}">{{$visita->visita}}</option>
                         @endforeach
                     </select></td>
                 <td class="bg-success"><input name="Fianciero" type="text"></td>
@@ -67,6 +73,7 @@
         <td>{{$proceso->fechaInicio}}</td>
         <td>{{$proceso->Entidad->nombre}}</td>
         <td>{{$proceso->Programa->nombre}}</td>
+        <td>{{$proceso->Visitas->visita}}</td>
         <td>{{$proceso->statusFinanciero}}</td>
         <td>{{$proceso->FIPCuota}}</td>
         <td>{{$proceso->cuota}}</td>

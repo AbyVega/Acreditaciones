@@ -5,14 +5,37 @@
 				<div class="wrapper style1">
 					
 					<div class="container">
-						<div class="row gtr-200">
+						<div >
 							<div class="col-4 col-12-mobile" id="sidebar">
 								<hr class="first" />
-								<section>
-									<a href="{{ route('Ciees.index')}}"><img src="images/ciees.jpg"></a>
+								<form action="{{route('ProEdu.store')}}" method="POST">
+									<header>
+
+									</header>
+									<div class="table-responsive">
+										<table class="table table-striped table-bordered tabled-condensed table-hover">
+											<thead>
+
+											<th><h3><a>Programas Educativos Evaluados</a></h3></th>
+											<th></th>
+											</tr>
+											</thead>
+											@foreach($programas as $programa)
+											<tr>
+												<td class="bg-success"><input name="id" type="text" value="{{$programa->nombre}}"></td>
+												<td class="bg-success"><button type="button" class="btn btn-success">
+														<span class="glyphicon glyphicon-download"></span></button>
+												</td>
+											</tr>
+											@endforeach
+											{{csrf_field()}}
+
+								</form>
 
 
-								</section>
+								</tbody>
+								</table>
+							</div>
 
 						</div>
 					</div>

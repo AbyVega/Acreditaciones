@@ -9,7 +9,7 @@
 
 			<div class="col-8 col-12-mobile imp-mobile" id="content">
 				<article id="main">
-					<form action="{{route('gestion.store')}}" method="POST">
+					<form action="{{route('Observacion.store')}}" method="POST">
 						<header>
 							<h3><a>Listado de Programas Acreditados</a></h3>
 						</header>
@@ -21,7 +21,7 @@
 
 									<th><h3>Programa educativo</h3></th>
 									<th><h3>Organismo Acreditador</h3></th>
-									<th><h3>No de Proceso</h3></th>
+									<th><h3>Procesos</h3></th>
 									<th><h3>Fecha Dictamen</h3></th>
 									<th><h3>Fecha Vigencia</h3></th>
 									<th><h3>Fecha Visita</h3></th>
@@ -35,53 +35,34 @@
 								</tr>
 								</thead>
 								<tr>
-									<td class="bg-success"><select name="programaEducativo_id">
-											<option>Selecciona</option>
-											@foreach($programas as $programa)
-												<option value="{{$programa->id}}">{{$programa->nombre}}</option>
-											@endforeach
-										</select></td>
-									<td class="bg-success"><select name="entiAcreditadora_id">
-											<option>Selecciona</option>
-											@foreach($entidades as $entidad)
-												<option value="{{$entidad->id}}">{{$entidad->nombre}}</option>
-											@endforeach
-										</select></td>
-									<td class="bg-success"><select name="proceso_id">
-											<option>Selecciona</option>
-											@foreach($procesos as $proceso)
-												<option value="{{$proceso->id}}">{{$proceso->id}}</option>
-											@endforeach
-										</select></td>
+									<td class="bg-success"><input type="search"></td>
+									<td class="bg-success"><input type="search"></td>
+									<td class="bg-success"><input type="search"></td>
 									<td class="bg-success"><input type="date"></td>
-									<td class="bg-success"><select>
-											<option value="volvo">TODOS</option>
-											<option value="saab">E1</option>
-											<option value="mercedes">E2</option>
-											<option value="mercedes">E3</option>
-										</select></td>
-									<td class="bg-success"><select>
-											<option value="volvo">TODOS</option>
-											<option value="saab">Vigente</option>
-											<option value="mercedes">No vigente</option>
-										</select></td>
-									<td class="bg-success"><input type="date" name="fecha"></td>
-									<td class="bg-success"><select>
-											<option value="volvo">TODOS</option>
-											<option value="saab">Si</option>
-											<option value="mercedes">No</option>
-										</select></td>
-									<td class="bg-success"><select>
-											<option value="volvo">TODOS</option>
-											<option value="saab">Si</option>
-											<option value="mercedes">No</option>
-										</select></td>
-									<td class="bg-success"><select>
-											<option value="volvo">TODOS</option>
-											<option value="saab">E1</option>
-											<option value="mercedes">E2</option>
-											<option value="mercedes">E3</option>
-										</select></td>
+									<td class="bg-success"><input type="search"></td>
+									<td class="bg-success"><input type="search"></td>
+									<td class="bg-success"><input type="search"></td>
+									<td class="bg-success"><input type="search"></td>
+									<td class="bg-success"><input type="search"></td>
+									<td class="bg-success"><input type="search"></td>
+									<td class="bg-success"></td>
+									<td class="bg-success"></td>
+										</tr>
+								@foreach($procesos AS $proceso)
+
+									<?php $size = count($proceso->Observacion);
+									?>
+								<tr>
+									<td>{{$proceso->Programa->nombre}}</td>
+									<td>{{$proceso->Entidad->nombre}}</td>
+									<td>{{$proceso->id}}</td>
+									<td>{{$proceso->Programa->fechaDictamen}}</td>
+									<td>{{$proceso->Programa->fechaVigencia}}</td>
+									<td>{{$proceso->Programa->fechaInicio}}</td>
+									<td>{{$proceso->Programa->calificacion}}</td>
+									<td>{{$size}}</td>
+									<td>{{$proceso->Programa->calidad}}</td>
+									<td>{{$proceso->Programa->status}}</td>
 									<td class="bg-success">
 
 										<a type="button" class="btn btn-secondary">
@@ -96,28 +77,14 @@
 
 
 									</td>
-									<td class="bg-success"><a href="{{route('Observacion.index')}}" type="button" class="btn btn-secondary">
+									<td class="bg-success"><a href="{{route('Observacion.crearObservacion', $proceso->id)}}" type="button" class="btn btn-secondary">
 											<span class="glyphicon glyphicon-plus"></span></a>
 
 									</td>
 
 
-
 								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
+									@endforeach
 							</table>
 
 					</form>
