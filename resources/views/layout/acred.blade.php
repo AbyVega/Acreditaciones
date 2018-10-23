@@ -48,7 +48,7 @@
                                 <li>
                                     <a href="#">Procesos de acreditacion</a>
                                     <ul>
-                                        <li><a href="{{route('reporteProcesos.index') }}">Reporte de procesos</a></li>
+                                        <li><a href="{{route('reporteProcesos.reporteProcesos') }}">Reporte de procesos</a></li>
                                         <li><a href="{{route('gestion.gestion') }}">Gestión de procesos</a></li>
                                         <li><a href="{{route('Observaciones.gestionObserva') }}">Gestión de observaciones</a></li>
                                         </ul>

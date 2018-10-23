@@ -121,14 +121,16 @@
                                            {{$dato->responsables}}
 
                                        </th>
-                                       <th><select name="puntosEvalu_id" required class="mb-3" >
+                                       <th>
+                                           <form method="post" action="{{route('indica12.correo')}}">
+                                           <select name="username" required class="mb-3" >
                                                <option>Seleciona</option>
                                                @foreach($usuarios as $usuario)
                                                    <option value="{{$usuario->email}}">{{$usuario->nombre}}</option>
                                                @endforeach
                                            </select>
                                            <button type="submit" class="btn btn-success">
-                                               <span class="glyphicon glyphicon-envelope"></span></button> </th>
+                                               <span class="glyphicon glyphicon-envelope"></span></button></form> </th>
 
                                    </tr>
                                    </tbody>

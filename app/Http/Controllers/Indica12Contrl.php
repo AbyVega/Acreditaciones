@@ -9,6 +9,9 @@ use App\IndicadorModel;
 use App\Usuarios;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Order;
+use App\Mail\OrderShipped;
+use Illuminate\Support\Facades\Mail;
 
 class Indica12Contrl extends Controller
 {
@@ -53,8 +56,16 @@ class Indica12Contrl extends Controller
      */
     public function store(Request $request)
     {
-        Indica12Model::create($request->all());
-        return redirect('Ciees');
+        $data = array('name' => "nombre", "body" => "body");
+        Mail::send('web.Ciees', $data, function($message) {
+            $message->to('chipol.velasco@gmail.com', 'Example')
+                ->subject('Subject for example');
+            $message->from('abyve24@gmail.com','Messagge from example');
+        });
+
+        return 'Email enviado correctamente';
+        //Indica12Model::create($request->all());
+        //return redirect('Ciees');
     }
 
     /**
@@ -125,5 +136,10 @@ class Indica12Contrl extends Controller
         return view('web.ciees.Datos',compact('consultas','guia', 'id', 'usuarios'));
 
 
+    }
+
+    public function envioCorreo(Request $request){
+        dd($request->username);
+      //  Mail::to($request->user())->send(new OrderShipped($order));
     }
 }

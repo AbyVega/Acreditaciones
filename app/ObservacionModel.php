@@ -46,4 +46,11 @@ class ObservacionModel extends Model
     public function Procesos(){
         return $this->belongsTo(ProcessModel::class, 'proceso_id', 'id');
     }
+
+    public function Indicador(){
+        return $this->belongsTo(IndicadorModel::class, 'indicador_id', 'id');
+    }
+    public function Programa(){
+        return $this->belongsTo(PeModel::class, 'programa_id', 'id');
+    }
 }

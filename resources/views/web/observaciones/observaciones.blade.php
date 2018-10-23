@@ -81,9 +81,9 @@
                 <td class="bg-success"><textarea name="accionesTomar" type="text"></textarea></td>
                 <td class="bg-success"><select  id="tiempoSolucion"name="tiempoSolucion" onchange="cargarFecha()">
                         <option>Seleccione una opcion</option>
-                        <option value="1">1 año</option>
-                        <option value="2">2 años</option>
-                        <option value="3">3 años</option>
+                        <option value="1 año">1 año</option>
+                        <option value="2 años">2 años</option>
+                        <option value="3 años">3 años</option>
                     </select></td>
                 <td class="bg-success"><input id="fechaCompromiso" name="fechaCompromiso" type="text"></td>
 

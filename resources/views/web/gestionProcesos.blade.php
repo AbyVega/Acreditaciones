@@ -9,9 +9,9 @@
 
 			<div class="col-8 col-12-mobile imp-mobile" id="content">
 				<article id="main">
-					<form action="{{route('Observacion.store')}}" method="POST">
+					<form>
 						<header>
-							<h3><a>Listado de Programas Acreditados</a></h3>
+							<h2><a>Reporte de procesos de acreditación</a></h2>
 						</header>
 						<header class="table-responsive">
 							<table class="table table-striped table-bordered tabled-condensed table-hover">
@@ -21,7 +21,6 @@
 
 									<th><h3>Programa educativo</h3></th>
 									<th><h3>Organismo Acreditador</h3></th>
-									<th><h3>Procesos</h3></th>
 									<th><h3>Fecha Dictamen</h3></th>
 									<th><h3>Fecha Vigencia</h3></th>
 									<th><h3>Fecha Visita</h3></th>
@@ -29,22 +28,13 @@
 									<th><h3>Total de Observaciones</h3></th>
 									<th><h3>Favorable</h3></th>
 									<th><h3>Estado del programa</h3></th>
-									<th><h3>Acciones_-_</h3></th>
+									<th><h3>Acciones</h3></th>
 									<th><h3>Asignar Observación</h3></th>
 
 								</tr>
 								</thead>
 								<tr>
-									<td class="bg-success"><input type="search"></td>
-									<td class="bg-success"><input type="search"></td>
-									<td class="bg-success"><input type="search"></td>
-									<td class="bg-success"><input type="date"></td>
-									<td class="bg-success"><input type="search"></td>
-									<td class="bg-success"><input type="search"></td>
-									<td class="bg-success"><input type="search"></td>
-									<td class="bg-success"><input type="search"></td>
-									<td class="bg-success"><input type="search"></td>
-									<td class="bg-success"><input type="search"></td>
+									<td  colspan="9" class="bg-success"><input type="search"></td>
 									<td class="bg-success"></td>
 									<td class="bg-success"></td>
 										</tr>
@@ -55,7 +45,6 @@
 								<tr>
 									<td>{{$proceso->Programa->nombre}}</td>
 									<td>{{$proceso->Entidad->nombre}}</td>
-									<td>{{$proceso->id}}</td>
 									<td>{{$proceso->Programa->fechaDictamen}}</td>
 									<td>{{$proceso->Programa->fechaVigencia}}</td>
 									<td>{{$proceso->Programa->fechaInicio}}</td>
@@ -67,10 +56,10 @@
 
 										<a type="button" class="btn btn-secondary">
 											<span class="glyphicon glyphicon-eye-open"></span></a>
-
+<br>
 										<a type="button" class="btn btn-secondary">
 											<span class="glyphicon glyphicon-pencil"></span></a>
-
+<br>
 										<a type="button" class="btn btn-secondary">
 											<span class="glyphicon glyphicon-trash"></span></a>
 

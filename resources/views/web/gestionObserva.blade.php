@@ -35,17 +35,7 @@
 								</tr>
 								</thead>
 								<tr>
-									<td class="bg-success"><input type="search" ></td>
-									<td class="bg-success"><input type="search" ></td>
-									<td class="bg-success"><input type="search" ></td>
-									<td class="bg-success"><input type="search" ></td>
-									<td class="bg-success"><input type="search" ></td>
-									<td class="bg-success"><input type="search" ></td>
-									<td class="bg-success"><input type="search" ></td>
-									<td class="bg-success"><input type="search" ></td>
-									<td class="bg-success"><input type="search" ></td>
-									<td class="bg-success"><input type="search" ></td>
-									<td class="bg-success"><input type="search" ></td>
+									<td colspan="13" class="bg-success"><input type="search" ></td>
 
 									<td class="bg-success"><button type="submit" class="btn btn-successt">
 											<span class="glyphicon glyphicon-search"></span></button>
@@ -63,7 +53,18 @@
 
 
 							<td>{{$observacion->proceso_id}}</td>
-							<td>{{$observacion->Procesos->programaEducativo_id}}</td>
+							<?php
+							$band=0;
+							while ($band==0){
+							    foreach ($programas as $programa){
+							        if($programa->id == $observacion->Procesos->programaEducativo_id){
+							            $nombre = $programa->nombre;
+							            $band =1;
+									}
+								}
+							}
+							?>
+							<td>{{$nombre}}</td>
 							<td>{{$observacion->Categorias->categoria}}</td>
 							<td>{{$observacion->Puntos->indicador}}</td>
 							<td>{{$observacion->observaIncidencia}}</td>

@@ -3,12 +3,12 @@
 
 			<!-- Main -->
 				<div class="wrapper style1">
-					
+
 					<div class="container">
 						<div >
 							<div class="col-4 col-12-mobile" id="sidebar">
 								<hr class="first" />
-								<form action="{{route('ProEdu.store')}}" method="POST">
+								<form action="{{route('ProEdu.index')}}" method="POST">
 									<header>
 
 									</header>
@@ -22,9 +22,12 @@
 											</thead>
 											@foreach($programas as $programa)
 											<tr>
-												<td class="bg-success"><input name="id" type="text" value="{{$programa->nombre}}"></td>
-												<td class="bg-success"><button type="button" class="btn btn-success">
-														<span class="glyphicon glyphicon-download"></span></button>
+												<td class="bg-success"><label>{{$programa->nombre}}</label><input name="id" type="text" value="{{$programa->nombre}}"></td>
+												<td>
+													<a target="_blank" href="crearReporte/1/{{$programa->id}}">Ver PDF físico</a>
+													<p></p>
+													<a target="_blank" href="crearExcel/{{$programa->id}}" >Exportar a Excel</a>
+
 												</td>
 											</tr>
 											@endforeach

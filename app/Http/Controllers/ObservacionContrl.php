@@ -6,6 +6,7 @@ use App\AreaModel;
 use App\CategoriasModel;
 use App\IndicadorModel;
 use App\ObservacionModel;
+use App\PeModel;
 use App\ProcessModel;
 use App\visitasModel;
 use Carbon\Carbon;
@@ -118,14 +119,18 @@ class ObservacionContrl extends Controller
 
     public function crearObservacion($id){
         $observaciones= ObservacionModel::with('Area', 'Puntos', 'Categorias', 'Procesos')->get();
+
+
+
         $procesos=ProcessModel::with('Entidad','Programa', 'Observacion')->get();
         $puntos=IndicadorModel::all();
         $visitas=visitasModel::all();
         $areas=AreaModel::all();
         $categorias=CategoriasModel::all();
+        $programas=PeModel::all();
 
 
-        return view('web.observaciones.observaciones',compact('observaciones', 'areas', 'categorias', 'procesos', 'puntos', 'visitas', 'id'));
+        return view('web.observaciones.observaciones',compact('observaciones', 'areas', 'categorias', 'procesos', 'puntos', 'visitas', 'id', 'programas'));
 
     }
 

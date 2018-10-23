@@ -21,6 +21,13 @@ class categoriasController extends Controller
         Carbon::setLocale('es');
     }
 
+    public function repProcess()
+
+    {
+        $programas = PeModel::all();
+        return view('web.reporteProcesos',compact('programas'));
+    }
+
     public function ciees()
     {
         return view('web.Ciees');
@@ -46,14 +53,13 @@ public function gestion(){
 
     public function gestionObserva(){
 
-        $observaciones= ObservacionModel::with('Area')->get();
+        $observaciones= ObservacionModel::with('Area', 'Puntos', 'Categorias', 'Procesos')->get();
 
-        $procesos=ProcessModel::all();
-        $puntos=IndicadorModel::all();
-        // dd($puntos);
-        $areas=AreaModel::all();
+        $programas = PeModel::all();
 
-        return view('web.gestionObserva',compact('observaciones', 'procesos', 'puntos', 'areas'));
+
+
+        return view('web.gestionObserva',compact('observaciones','programas'));
 
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PeModel;
 use App\ProcessModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -21,9 +22,10 @@ class repProContrl extends Controller
 
     public function index()
     {
-        $procesos=(ProcessModel::all());
+        $procesos=ProcessModel::all();
+        $programas=PeModel::all();
 
-        return view('web.registros',compact('procesos'));
+        return view('web.registros',compact('procesos', 'programas'));
     }
 
     /**

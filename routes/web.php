@@ -16,8 +16,6 @@ Route::resource('Observacion','ObservacionContrl');
 
 Route::resource('registrarUsuarios', 'regiUsuContrl');
 
-Route::resource('reporteProcesos', 'reporteprocessContrl');
-
 Route::resource('Usuarios', 'UsuariosContrl');
 
 Route::resource('Fortaleza', 'FortalezaContrl');
@@ -43,10 +41,11 @@ Route::get('cat51',['as' => 'categoria.categoria51', 'uses' => 'categoriasContro
 Route::get('cat52',['as' => 'categoria.categoria52', 'uses' => 'categoriasController@categoria52']);
 Route::get('acreditacion',['as' => 'acreditacion.Acreditacion', 'uses' => 'categoriasController@acreditacion']);
 Route::get('ciees',['as' => 'ciees.ciees', 'uses' => 'categoriasController@ciees']);
+Route::get('reporteProcesos',['as' => 'reporteProcesos.reporteProcesos', 'uses' => 'categoriasController@repProcess']);
 Route::get('gestion',['as' => 'gestion.gestion', 'uses' => 'categoriasController@gestion']);
 Route::get('crearObservacion/{id}',['as' => 'Observacion.crearObservacion', 'uses' => 'ObservacionContrl@crearObservacion']);
 Route::get('gestionObserva',['as' => 'Observaciones.gestionObserva', 'uses' => 'categoriasController@gestionObserva']);
-
+Route::post('correos', ['as' => 'indica12.correo', 'uses' => 'Indica12Contrl@envioCorreo']);
 //Route::get('area',['as' => 'area.area', 'uses' => 'categoriasController@area']);
 Auth::routes();
 
@@ -54,3 +53,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('auth/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('reportes','PdfController@index');
+Route::get('crearReporte/{tipo}/{id}','PdfController@crearReporte');
+Route::get('crearExcel/{id}','PdfController@crearExcel');
