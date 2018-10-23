@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 465),
+    'port' => env('MAIL_PORT', 587),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'abyve24@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Abigail Vega'),
+        'address' => env('MAIL_FROM_ADDRESS', 'sistema.acreditaciones@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'SIGECE'),
     ],
 
     /*
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
+    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
 
     /*
     |--------------------------------------------------------------------------
