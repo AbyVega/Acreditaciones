@@ -37,6 +37,7 @@
 
                       <div class="table-responsive">
                            <table class="table table-striped table-bordered tabled-condensed table-hover">
+                               <input type="hidden" value="{{$guia}}" name="guia">
                                         @foreach($guia as $dato)
                                     <thead class="thead-dark">
                                           <tr>
@@ -121,16 +122,17 @@
                                            {{$dato->responsables}}
 
                                        </th>
+
                                        <th>
-                                           <form method="post" action="{{route('indica12.correo')}}">
+
                                            <select name="username" required class="mb-3" >
                                                <option>Seleciona</option>
                                                @foreach($usuarios as $usuario)
                                                    <option value="{{$usuario->email}}">{{$usuario->nombre}}</option>
                                                @endforeach
                                            </select>
-                                           <button type="submit" class="btn btn-success">
-                                               <span class="glyphicon glyphicon-envelope"></span></button></form> </th>
+                                         <button type="submit" class="btn btn-success">
+                                                  <span class="glyphicon glyphicon-envelope"></span></button></a> </th>
 
                                    </tr>
                                    </tbody>

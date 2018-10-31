@@ -115,14 +115,17 @@
 
 
         <td>{{$observacion->id}}</td>
-        <td>{{$observacion->Puntos->puntos}}</td>
+        <td>{{$observacion->Categorias->categoria}}</td>
+        <td>{{$observacion->Indicador->indicador}}</td>
         <td>{{$observacion->observaIncidencia}}</td>
         <td>{{$observacion->Visitas->visita}}</td>
         <td>{{$observacion->fechaObserva}}</td>
+        <td>{{$observacion->accionesTomar}}</td>
         <td>{{$observacion->fechaCompromiso}}</td>
         <td>{{$observacion->fechaCompromiso}}</td>
         <td>{{$observacion->Area->area}}</td>
         <td>{{$observacion->estadoIncidencia}}</td>
+
         <td>
             <form id="delete_Observacion" action="{{route('Observacion.destroy', $observacion->id)}}" method="POST" >
                 <a href="{{route('Observacion.edit', $observacion->id)}}">

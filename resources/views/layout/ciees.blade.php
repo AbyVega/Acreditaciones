@@ -52,35 +52,35 @@
                         <li><a href="{{route('categoria.categoria11')}}">Condiciones generales de operación del programa</a></li>
                     </ul>
                 </li>
-                <li><a href="left-sidebar.html">Currículo</a>
+                <li><a href="#">Currículo</a>
                     <ul>
                         <li><a href="{{route('categoria.categoria2')}}">Modelo educaativo y plan de estudios</a></li>
                         <li><a href="{{route('categoria.categoria21')}}">Actividades para la formación integral</a></li>
                     </ul>
-                <li><a href="left-sidebar.html">Tránsito de los estudiantes</a>
+                <li><a href="#">Tránsito de los estudiantes</a>
                     <ul>
                         <li><a href="{{route('categoria.categoria3')}}">Proceso de ingreso al programa</a></li>
                         <li><a href="{{route('categoria.categoria31')}}">Treayectoria escolar</a></li>
                         <li><a href="{{route('categoria.categoria32')}}">Egreso del programa</a></li>
 
                     </ul>
-                <li><a href="left-sidebar.html">Resultados</a>
+                <li><a href="#">Resultados</a>
                     <ul>
                         <li><a href="{{route('categoria.categoria4')}}">Resultados de los estudiantes</a></li>
                         <li><a href="{{route('categoria.categoria41')}}">Resultados del programa</a></li>
                     </ul>
                 </li>
-                <li><a href="left-sidebar.html">Personal académico</a>
+                <li><a href="#">Personal académico</a>
                     <ul>
                         <li><a href="{{route('categoria.categoria5')}}">Personal académico</a></li>
                         <li><a href="{{route('categoria.categoria51')}}">Infrestructura académica</a></li>
                         <li><a href="{{route('categoria.categoria52')}}">Servicios de apoyo</a></li>
                     </ul>
                 </li>
-                <li><a href="left-sidebar.html">Analisis</a>
+                <li><a href="#">Analisis</a>
                     <ul>
-                        <li><a href="{{route('Fortaleza.index')}}">Fortalezas</a></li>
-                        <li><a href="{{route('Oportunidad.index')}}">Oportunidad de mejora</a></li>
+                        <li><a href="{{route('Fortaleza.index')}}">Fortalezas y oportunidades</a></li>
+
                     </ul>
                 </li>
             </ul>

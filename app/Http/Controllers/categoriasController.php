@@ -32,6 +32,12 @@ class categoriasController extends Controller
     {
         return view('web.Ciees');
     }
+    public function FortalezaReg()
+    {
+        $fortalezas=FortalezaModel::with('Categorias')->get();
+        $categorias=CategoriasModel::all();
+        return view('web.ciees.Foda.RegFortaleza', compact('fortalezas', 'categorias'));
+    }
 
 public function gestion(){
     $procesos=ProcessModel::with('Entidad','Programa', 'Observacion')->get();

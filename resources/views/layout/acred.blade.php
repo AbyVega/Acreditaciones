@@ -53,22 +53,22 @@
                                         <li><a href="{{route('Observaciones.gestionObserva') }}">Gestión de observaciones</a></li>
                                         </ul>
                                 </li>
-                                <li><a href="left-sidebar.html">Reportes de procesos</a>
-                                    <ul>
-                                        <li><a href="#">PE de calidad (CIEES/COPAES)</a></li>
-                                        <!--<li><a href="#">PE con CIEES Nivel 1</a></li>
-                                        <li><a href="#">PE con CIEES Nivel 2 y 3</a></li>
-                                        <li><a href="#">PE con COPAES</a></li>
-                                        <li><a href="#">PE con acreditacion internacional</a></li>
-                                        <li><a href="#">PE evaluables sin proceso CIEES o COPAES</a></li>
-                                        <li><a href="#">PE vencidos de calidad</a></li>
-                                        <li><a href="#">PE vencidos por fecha</a></li>
-                                        <li><a href="#">PE vencidos CIEES</a></li>
-                                        <li><a href="#">PE vencidos COPAES</a></li>
-                                        <li><a href="#">Programa Status</a></li>-->
-                                        <li><a href="#">Evidencia Proceso</a></li>
-                                        <li><a href="#">Observaciones por programa educativo</a></li>
-                                        </ul>
+                                <!-- <li><a href="#">Reportes de procesos</a>
+                                     <ul>
+                                         <li><a href="#">PE de calidad (CIEES/COPAES)</a></li>
+                                      !--<li><a href="#">PE con CIEES Nivel 1</a></li>
+                                         <li><a href="#">PE con CIEES Nivel 2 y 3</a></li>
+                                         <li><a href="#">PE con COPAES</a></li>
+                                         <li><a href="#">PE con acreditacion internacional</a></li>
+                                         <li><a href="#">PE evaluables sin proceso CIEES o COPAES</a></li>
+                                         <li><a href="#">PE vencidos de calidad</a></li>
+                                         <li><a href="#">PE vencidos por fecha</a></li>
+                                         <li><a href="#">PE vencidos CIEES</a></li>
+                                         <li><a href="#">PE vencidos COPAES</a></li>
+                                         <li><a href="#">Programa Status</a></li>
+                                         <li><a href="#">Evidencia Proceso</a></li>
+                                         <li><a href="#">Observaciones por programa educativo</a></li>
+                                         </ul>-->
                                 </li>
                                 </ul>
                         </nav>

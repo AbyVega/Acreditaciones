@@ -29,8 +29,9 @@
             <!-- Inner -->
             <div class="inner">
                 <header>
-                    <h1><a href="index.html" id="logo">SIGECE</a></h1>
-                    <hr />
+                    <h1><a href="#" id="logo">SIGECE</a></h1>
+                    <hr /
+
                     <p>Centro Universitario de los Valles</p>
 
                 </header>

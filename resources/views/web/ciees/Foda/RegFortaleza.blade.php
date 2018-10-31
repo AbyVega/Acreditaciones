@@ -1,6 +1,6 @@
 @extends('layout.ciees')
 @section('content')
-</script>
+
 <!-- Main -->
 <article class="wrapper style1">
 
@@ -33,7 +33,7 @@
                     <th width="550"> <select name="categorias_id" required class="mb-3" >
                             <option>Seleciona</option>
                             @foreach($categorias as $categoria)
-                                <option value="{{$categoria->id}}">{{$categoria->id}}</option>
+                                <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
                             @endforeach
                         </select></th>
                 </tr>

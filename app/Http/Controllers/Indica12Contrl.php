@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\CategoriasModel;
 use App\GuiaModel;
+use App\Http\Requests\datos;
 use App\Indica12Model;
 use App\IndicadorModel;
 use App\Usuarios;
@@ -53,19 +54,26 @@ class Indica12Contrl extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
      */
-    public function store(Request $request)
-    {
-        $data = array('name' => "nombre", "body" => "body");
-        Mail::send('web.Ciees', $data, function($message) {
-            $message->to('chipol.velasco@gmail.com', 'Example')
-                ->subject('Subject for example');
-            $message->from('abyve24@gmail.com','Messagge from example');
-        });
 
-        return 'Email enviado correctamente';
-        //Indica12Model::create($request->all());
-        //return redirect('Ciees');
+    public function store(datos $request)
+    {
+      $guia = GuiaModel::where('indicador_id',$request['indicador_id'])->get();
+        $usuario = Usuarios::where('email',$request['username'])->get();
+
+        Indica12Model::create($request->all());
+
+
+        $data = array('name' => "nombre", "body" => "body", 'guia' => $guia);
+
+        Mail::send('email.IndicadorEmail', $data, function($message) use ($usuario) {
+            $message->to($usuario[0]->email)
+                ->subject('SIGECE CUVALLES - C.'." ".$usuario[0]->apePaterno." ".$usuario[0]->apeMaterno." ".$usuario[0]->nombre." ".', favor de leer la siguiente información.');
+            $message->from('sistema.acreditaciones@gmail.com','Sistema de Acreditación (SIGECE)');
+
+        });
+        return redirect('ciees');
     }
 
     /**
@@ -138,8 +146,9 @@ class Indica12Contrl extends Controller
 
     }
 
-    public function envioCorreo(Request $request){
-        dd($request->username);
-      //  Mail::to($request->user())->send(new OrderShipped($order));
+    public function envioCorreo($usuario, $indicador){
+
+
+        return 'Email enviado correctamente';
     }
 }

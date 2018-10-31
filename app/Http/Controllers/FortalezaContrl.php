@@ -22,9 +22,10 @@ class FortalezaContrl extends Controller
 
     public function index()
     {
-        $categorias=CategoriasModel::all();
 
-        return view('web.ciees.Foda.RegFortaleza',compact('categorias'));
+        $fortalezas=FortalezaModel::with('Categorias')->get();
+
+        return view('web.ciees.Foda.Fortaleza',compact('fortalezas'));
 
     }
 
@@ -47,7 +48,8 @@ class FortalezaContrl extends Controller
     public function store(Request $request)
     {
         FortalezaModel::create($request->all());
-        return redirect('Cat11');
+        return view('web.Ciees');
+
     }
 
     /**
@@ -86,7 +88,7 @@ class FortalezaContrl extends Controller
         $fortalezas=FortalezaModel::findOrFail($id);
         $categorias=CategoriasModel::all();
         $fortalezas->update($request->all());
-        return redirect('Cat11');
+        return redirect('Fortaleza');
     }
 
     /**
@@ -99,7 +101,7 @@ class FortalezaContrl extends Controller
     {
         $fortalezas=FortalezaModel::findOrFail($id);
         $fortalezas->delete();
-        return redirect('Cat11');
+        return redirect('Fortaleza');
 
     }
 }

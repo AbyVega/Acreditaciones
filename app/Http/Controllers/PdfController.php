@@ -57,9 +57,7 @@ class PdfController extends Controller
     {
         Excel::create('Excel', function ($excel) use ($id){
            $excel->sheet('Datos', function ($sheet) use ($id){
-               $sheet->row(1,[
-
-               ]);
+               $sheet->row(1,['Numero', 'nombre']);
                $process = ProcessModel::with('Observacion')->where('programaEducativo_id',$id)->get();
                $procesos = $process[0]->Observacion()->get();
                $sheet->fromArray($procesos);

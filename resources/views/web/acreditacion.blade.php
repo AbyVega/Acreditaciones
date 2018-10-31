@@ -22,9 +22,9 @@
 											</thead>
 											@foreach($programas as $programa)
 											<tr>
-												<td class="bg-success"><label>{{$programa->nombre}}</label><input name="id" type="text" value="{{$programa->nombre}}"></td>
+												<td class="bg-success"><input name="id" type="text" value="{{$programa->nombre}}"></td>
 												<td>
-													<a target="_blank" href="crearReporte/1/{{$programa->id}}">Ver PDF físico</a>
+													<a  target="_blank" href="crearReporte/1/{{$programa->id}}">Ver PDF físico</a>
 													<p></p>
 													<a target="_blank" href="crearExcel/{{$programa->id}}" >Exportar a Excel</a>
 
