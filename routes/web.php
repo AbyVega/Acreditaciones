@@ -26,6 +26,7 @@ Route::resource('Indica11','Indica11Contrl');
 Route::resource('Indica12', 'Indica12Contrl');
 
 Route::get('Guia/{id}',['as' => 'Guia.mostrarGuia', 'uses' => 'Indica12Contrl@mostrarGuia']);
+Route::get('datos/{indicador}',['as' => 'datos.mostrarDatos', 'uses' => 'Indica12Contrl@mostrarDatos']);
 Route::get('Pross/{id}',['as' => 'Pross.llamaProceso', 'uses' => 'ObservacionContrl@llamaProceso']);
 Route::get('cat1',['as' => 'categoria.categoria1', 'uses' => 'categoriasController@categoria1']);
 Route::get('cat11',['as' => 'categoria.categoria11', 'uses' => 'categoriasController@categoria11']);

@@ -26,7 +26,7 @@
 
                                             <div class="form-row">
                                                 <div class="form-group">
-                                                    <label for="inputAddress"><h4>Codigo</h4></label>
+                                                    <label for="inputAddress"><h4>Código</h4></label>
                                                     <input type="text" class="form-control" id="inputAddress" name="id" required value="{{$usuarios->id}}">
                                                 </div>
                                                 <div class="form-group col-md-4">
@@ -45,16 +45,16 @@
                                             <div class="form-group col-md-4">
                                                 <label for="inputEmail4"><h4>Tipo de Usuario</h4></label>
 
-                                                <input type="text" class="form-control" id="inputEmail4" name="tipos_id" required value="{{$usuarios->tipos_id}}">
+                                                <input type="text" class="form-control" id="inputEmail4" name="tipos_id" required value="{{$usuarios->Tipos->tipo}}">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputPassword4"><h4>Area a la que pertenece</h4></label>
-                                                <input type="text" class="form-control" id="inputPassword4" name="area" required value="{{$usuarios->Area_id}}">
+                                                <input type="text" class="form-control" id="inputPassword4" name="area" required value="{{$usuarios->Area->area}}">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputPassword4"><h4>Programa educativo</h4></label>
 
-                                                <input type="text" class="form-control" id="inputPassword4" name="programaEducativo_id" required value="{{$usuarios->programaEducativo_id}}">
+                                                <input type="text" class="form-control" id="inputPassword4" name="programaEducativo_id" required value="{{$usuarios->Programa->nombre}}">
                                             </div>
 
                                                 <div class="form-group col-md-12">

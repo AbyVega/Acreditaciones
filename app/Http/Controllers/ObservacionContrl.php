@@ -110,7 +110,7 @@ class ObservacionContrl extends Controller
         $observacion=ObservacionModel::findOrFail($id);
         $observacion->delete();
 
-        return redirect('Observacion');
+        return redirect('gestionObserva');
     }
 
     public function llamaProceso($id){

@@ -58,12 +58,14 @@
                 <td class="bg-success"><select name="tipoPrograma" required>
                         <option >Selecciona</option>
                         <option value="licenciatura">Licenciatura</option>
+                        <option value="Ingieneria">Ingieneria</option>
                         <option value="nivelacion">Nivelación</option>
                     </select>
                 </td>
                 <td class="bg-success"><input name="fechaInicio" type="date" placeholder="12/05/2018" required></td>
                 <td class="bg-success"><select name="calificacion" required>
                         <option >Selecciona</option>
+                        <option value="No tiene">No tiene</option>
                         <option value="E1">E1</option>
                         <option value="E2">E2</option>
                         <option value="E3">E3</option>

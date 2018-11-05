@@ -11,89 +11,21 @@
 
 
                     <p>
-                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample2"
-                                aria-expanded="false" aria-controls="multiCollapseExample2">Cursos o actividades complementarios<p>para la formación integral</p></button>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample3"
-                            aria-expanded="false" aria-controls="multiCollapseExample3">Enseñanza de  <p>otras lenguas</p> </button>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample4"
-                            aria-expanded="false" aria-controls="multiCollapseExample4">Cursos,  seminarios  o  capacitaciones<p>para  obtener  certificaciones externas</p> </button>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample4"
-                            aria-expanded="false" aria-controls="multiCollapseExample5">Integridad<p><br></p><p></p> </button>
+                        <button class="btn btn-success" type="button" onclick="cargarDatos('13')">Cursos o actividades complementarios<p>para la formación integral</p></button>
+                    <button class="btn btn-success" type="button" onclick="cargarDatos('14')">Enseñanza de  <p>otras lenguas</p> </button>
+                    <button class="btn btn-success" type="button" onclick="cargarDatos('15')">Cursos,  seminarios  o  capacitaciones<p>para  obtener  certificaciones externas</p> </button>
+                    <button class="btn btn-success" type="button" onclick="cargarDatos('16')">Integridad<p><br></p><p></p> </button>
 
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target=".multi-collapse"
-                            aria-expanded="false" aria-controls=" multiCollapseExample2 multiCollapseExample3
-                                multiCollapseExample4 multiCollapseExample5 ">Ocultar Elementos<p><br></p></button>
+                    <button class="btn btn-success" type="button" onclick="ocultarDatos()">Ocultar Elemento<p><br></p></button>
                     </p>
 
+
+
                     <div class="row">
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                    <div class="card card-body">
+                        <div id="mostrarDatos">
 
-                                        @include ('web.ciees.indicadores.D.Cuatro1')
+                        </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!--dos-->
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample3">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.D.Cuatro2')
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-
-
-
-                        <!--tres-->
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample4">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.D.Cuatro3')
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-
-                        <!--cuatro-->
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample5">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.D.Cuatro4')
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-                        <!--cinco
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample6">
-                                    <div class="card card-body">
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>-->
-
-
-
-
-                        <!--fin-->
                     </div>
 
                 </ul>
@@ -110,7 +42,18 @@
     </ar>
     <br>
     <br>
+    <script>
+        function cargarDatos(indicador) {
+            document.getElementById('mostrarDatos').style.display="block";
+            $("#mostrarDatos").load('/datos/' + indicador);
 
+
+        }
+        function ocultarDatos() {
+            document.getElementById('mostrarDatos').style.display="none";
+
+        }
+    </script>
     <script src="{{asset('estilo/js/jquery.min.js')}}"></script>
     <script src="{{asset('estilo/js/jquery.dropotron.min.js')}}"></script>
     <script src="{{asset('estilo/js/jquery.scrolly.min.js')}}"></script>

@@ -7,6 +7,8 @@ use App\GuiaModel;
 use App\Http\Requests\datos;
 use App\Indica12Model;
 use App\IndicadorModel;
+use App\ObservacionModel;
+use App\PeModel;
 use App\Usuarios;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -116,7 +118,7 @@ class Indica12Contrl extends Controller
 
         $consultas->update($request->all());
 
-        return redirect('Ciees');
+        return redirect('ciees');
     }
 
     /**
@@ -130,7 +132,7 @@ class Indica12Contrl extends Controller
         $consultas=Indica12Model::findOrFail($id);
         $consultas->delete();
 
-        return redirect('Ciees');
+        return redirect('ciees');
     }
 
     public function mostrarGuia($id){
@@ -150,5 +152,30 @@ class Indica12Contrl extends Controller
 
 
         return 'Email enviado correctamente';
+    }
+    public function mostrarDatos($indicador){
+
+        $nombre = IndicadorModel::findOrfail($indicador);
+
+        $datos = Indica12Model::where('indicador_id',$indicador)->get();
+
+        $obs = ObservacionModel::where('indicador_id',$indicador)->get();
+
+
+        if(count($obs) > 0) {
+          //  dd("si tiene");
+            $proEdu = $obs[0]->Procesos->programaEducativo_id;
+            $programaEducativo = PeModel::findOrFail($proEdu);
+            $nombrePrograma = $programaEducativo->nombre;
+        }
+        else{
+          //  dd("no tiene");
+            $nombrePrograma = " ";
+        }
+
+      // dd($obs);
+
+
+        return view('web.ciees.vistaDatos',compact('datos','indicador','nombre','nombrePrograma'));
     }
 }

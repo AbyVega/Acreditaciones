@@ -12,13 +12,13 @@
                                 <thead>
                                 <tr>
 
-                                    <th><h3><a>Codigo</a></h3></th>
+                                    <th><h3><a>Código</a></h3></th>
                                     <th><h3><a>Nombre</a></h3></th>
                                     <th><h3><a>Apellido Paterno</a></h3></th>
                                     <th><h3><a>Apellido Materno</a></h3></th>
                                     <th><h3><a>Tipo de Usuario</a></h3></th>
                                     <th><h3><a>Email</a></h3></th>
-                                    <th><h3><a>Area</a></h3></th>
+                                    <th><h3><a>Área</a></h3></th>
                                     <th colspan="2"><h3><a>Programa Educativo</a></h3></th>
                                 </tr>
                                 </thead>
@@ -81,15 +81,18 @@
 
                             <td>{{$usuario->Area->area}}</td>
                             <td>{{$usuario->Programa->nombre}}</td>
-                            <td><form id="delete_form{{$usuario->id}}"  method="POST" onsubmit="return deleteElement(
-              '¿Está seguro de querer eliminar el evento {{$usuario->nombre}}?',
-              'delete_form_{{$usuario->id}}', event);
-              ">
-                                    <a href="{{route('Usuarios.edit', $usuario->id)}}">
+                            <td><form id="delete_form{{$usuario->id}}" action="{{route('Usuarios.destroy', $usuario->id)}}"
+                                      method="POST" onsubmit="return deleteElement(
+                                        '¿Está seguro de querer eliminar el evento {{$usuario->nombre}}?',
+                                        'delete_form_{{$usuario->id}}', event);
+                                        ">
+
+
+                                <a href="{{route('Usuarios.edit', $usuario->id)}}">
                                         <button type="button" class="btn btn-secondary">
                                             <span class="glyphicon glyphicon-pencil"></span></button>
                                     </a>
-                                    <button class="btn btn-danger">
+                                    <button type="submit" class="btn btn-danger">
                                         <span class="glyphicon glyphicon-trash"></span></button>
                                     <input name="_method" type="hidden" value="DELETE">
                                     {{csrf_field()}}

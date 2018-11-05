@@ -40,7 +40,7 @@
                             <option value="{{$programa->id}}">{{$programa->nombre}}</option>
                         @endforeach
                     </select></td>
-                <td class="bg-success"><select name="visita_id">
+                <td class="bg-success"><select name="visitas_id">
                         @foreach($visitas as $visita)
                             <option value="{{$visita->id}}">{{$visita->visita}}</option>
                         @endforeach

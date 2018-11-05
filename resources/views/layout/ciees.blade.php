@@ -54,13 +54,13 @@
                 </li>
                 <li><a href="#">Currículo</a>
                     <ul>
-                        <li><a href="{{route('categoria.categoria2')}}">Modelo educaativo y plan de estudios</a></li>
+                        <li><a href="{{route('categoria.categoria2')}}">Modelo educativo y plan de estudios</a></li>
                         <li><a href="{{route('categoria.categoria21')}}">Actividades para la formación integral</a></li>
                     </ul>
                 <li><a href="#">Tránsito de los estudiantes</a>
                     <ul>
                         <li><a href="{{route('categoria.categoria3')}}">Proceso de ingreso al programa</a></li>
-                        <li><a href="{{route('categoria.categoria31')}}">Treayectoria escolar</a></li>
+                        <li><a href="{{route('categoria.categoria31')}}">Trayectoria escolar</a></li>
                         <li><a href="{{route('categoria.categoria32')}}">Egreso del programa</a></li>
 
                     </ul>

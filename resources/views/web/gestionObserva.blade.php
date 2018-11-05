@@ -26,7 +26,7 @@
 								<th><h3><a>Indicador</a></h3></th>
 								<th><h3><a>Incidencia</a></h3></th>
 								<th><h3><a>Fecha</a></h3></th>
-								<th><h3><a>Accion a tomar</a></h3></th>
+								<th><h3><a>Acción a tomar</a></h3></th>
 								<th><h3><a>Tiempo de Solución</a></h3></th>
 								<th><h3><a>Fecha Compromiso</a></h3></th>
 								<th><h3><a>Entidad Responsable</a></h3></th>
@@ -35,13 +35,13 @@
 								</tr>
 								</thead>
 								<tr>
-									<td colspan="13" class="bg-success"><input type="search" ></td>
+									<!--<td colspan="13" class="bg-success"><input type="search" ></td>
 
 									<td class="bg-success"><button type="submit" class="btn btn-successt">
 											<span class="glyphicon glyphicon-search"></span></button>
 										<button type="reset" class="btn btn-danger">
 											<span class="glyphicon glyphicon-remove"></span></button>
-									</td>
+									</td>-->
 								</tr>
 								{{csrf_field()}}
 								<tr>

@@ -30,7 +30,7 @@
             <div class="inner">
                 <header>
                     <h1><a href="#" id="logo">SIGECE</a></h1>
-                    <hr /
+                    <hr />
 
                     <p>Centro Universitario de los Valles</p>
 

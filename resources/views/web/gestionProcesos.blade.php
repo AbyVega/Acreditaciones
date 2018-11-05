@@ -24,19 +24,22 @@
 									<th><h3>Fecha Dictamen</h3></th>
 									<th><h3>Fecha Vigencia</h3></th>
 									<th><h3>Fecha Visita</h3></th>
-									<th><h3>Calificacion</h3></th>
+									<th><h3>Calificación</h3></th>
 									<th><h3>Total de Observaciones</h3></th>
 									<th><h3>Favorable</h3></th>
 									<th><h3>Estado del programa</h3></th>
-									<th><h3>Acciones</h3></th>
+									<!--<th><h3>Acciones</h3></th>-->
 									<th><h3>Asignar Observación</h3></th>
 
 								</tr>
 								</thead>
 								<tr>
-									<td  colspan="9" class="bg-success"><input type="search"></td>
+									<!--<td  colspan="9" class="bg-success"><input type="search"></td>
 									<td class="bg-success"></td>
-									<td class="bg-success"></td>
+									<td class="bg-success"></td>-->
+								<tr>
+									<td colspan="14"><img src="images/formulario.png"  width="1300px" height="2px" /></td>
+								</tr>
 										</tr>
 								@foreach($procesos AS $proceso)
 
@@ -52,7 +55,7 @@
 									<td>{{$size}}</td>
 									<td>{{$proceso->Programa->calidad}}</td>
 									<td>{{$proceso->Programa->status}}</td>
-									<td class="bg-success">
+									<!--<td class="bg-success">
 
 										<a type="button" class="btn btn-secondary">
 											<span class="glyphicon glyphicon-eye-open"></span></a>
@@ -65,7 +68,7 @@
 
 
 
-									</td>
+									</td>-->
 									<td class="bg-success"><a href="{{route('Observacion.crearObservacion', $proceso->id)}}" type="button" class="btn btn-secondary">
 											<span class="glyphicon glyphicon-plus"></span></a>
 

@@ -11,90 +11,20 @@
 
 
                     <p>
-                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample2"
-                                aria-expanded="false" aria-controls="multiCollapseExample2">Proposito <p>del programa</p></button>
-                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample3"
-                                aria-expanded="false" aria-controls="multiCollapseExample3">Fundamentación de la<p>necesidad del programa</p> </button>
-                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample4"
-                                aria-expanded="false" aria-controls="multiCollapseExample4">Plan de desarrollo<p>del programa</p> </button>
-                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample5"
-                                aria-expanded="false" aria-controls="multiCollapseExample5">Perfil de egreso<p><br></p></button>
+                        <button class="btn btn-success" type="button"  onclick="cargarDatos('1')">Proposito <p>del programa</p></button>
+                        <button class="btn btn-success" type="button" onclick="cargarDatos('2')">Fundamentación de la<p>necesidad del programa</p> </button>
+                        <button class="btn btn-success" type="button" onclick="cargarDatos('3')">Plan de desarrollo<p>del programa</p> </button>
+                        <button class="btn btn-success" type="button" onclick="cargarDatos('4')">Perfil de egreso<p><br></p></button>
 
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target=".multi-collapse"
-                                aria-expanded="false" aria-controls=" multiCollapseExample2 multiCollapseExample3
-                                multiCollapseExample4 multiCollapseExample5 ">Ocultar Elementos<p><br></p></button>
+                    <button class="btn btn-success" type="button" onclick="ocultarDatos()">Ocultar Elementos<p><br></p></button>
                     </p>
 
-                    <div class="row">
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.U.UnoUno')
+                    <div id="mostrarDatos">
 
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!--dos-->
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample3">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.U.UnoDos')
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-
-
-
-                        <!--tres-->
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample4">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.U.Uno3')
-
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-
-                        <!--cuatro-->
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample5">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.U.Uno4')
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-                        <!--cinco
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample6">
-                                    <div class="card card-body">
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>-->
-
-
-
-
-                        <!--fin-->
                     </div>
+
+
+
 
                 </ul>
 
@@ -110,6 +40,19 @@
     </ar>
     <br>
     <br>
+
+    <script>
+        function cargarDatos(indicador) {
+            document.getElementById('mostrarDatos').style.display="block";
+            $("#mostrarDatos").load('/datos/' + indicador);
+
+
+        }
+        function ocultarDatos() {
+            document.getElementById('mostrarDatos').style.display="none";
+
+        }
+    </script>
 
     <script src="{{asset('estilo/js/jquery.min.js')}}"></script>
     <script src="{{asset('estilo/js/jquery.dropotron.min.js')}}"></script>

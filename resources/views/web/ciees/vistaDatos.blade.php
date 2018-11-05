@@ -1,13 +1,15 @@
-<form>
+<form action="" method="POST">
     <header>
-        <h2><a href="#">Integridad </a></h2>
+        <h2>{{$nombre->indicador}}</h2>
     </header>
     <div class="table-responsive">
+
+        @if(!@empty($datos))
         <table class="table table-striped table-bordered tabled-condensed table-hover">
 
             <thead class="thead-dark">
             <tr>
-                <th scope="col">No</th>
+                <th scope="col">Programa Educativo</th>
                 <th scope="col">Indicador</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Intrucciones</th>
@@ -23,20 +25,20 @@
             </thead>
             <tbody>
 
-            @foreach($consultas44 as $consulta44)
+            @foreach($datos as $dato)
 
 
                 <tr>
-                    <th scope="row">{{$consulta44->id}}</th>
-                    <td>{{$consulta44->indicador_id}}</td>
-                    <td>{{$consulta44->descripcion}}</td>
-                    <td>{{$consulta44->instruccion}}</td>
-                    <td>{{$consulta44->valoracion}}</td>
-                    <td>{{$consulta44->adicional}}</td>
-                    <td>{{$consulta44->documentos}}</td>
+                    <th scope="row">{{$nombrePrograma}}</th>
+                    <td>{{$dato->Indicadores->indicador}}</td>
+                    <td>{{$dato->descripcion}}</td>
+                    <td>{{$dato->instruccion}}</td>
+                    <td>{{$dato->valoracion}}</td>
+                    <td>{{$dato->adicional}}</td>
+                    <td>{{$dato->documentos}}</td>
                     <td>
-                        <form id="delete_Entidad" action="{{route('Indica12.destroy', $consulta44->id)}}" method="POST" >
-                            <a href="{{route('Indica12.edit', $consulta44->id)}}">
+                        <form id="delete_Entidad" action="{{route('Indica12.destroy', $dato->id)}}" method="POST" >
+                            <a href="{{route('Indica12.edit', $dato->id)}}">
                                 <button type="button" class="btn btn-secondary">
                                     <span class="glyphicon glyphicon-pencil"></span></button>
                                 {{csrf_field()}}
@@ -53,5 +55,8 @@
             @endforeach
             </tbody>
         </table>
+            @else
+        <h2>No hay datos</h2>
+        @endif
     </div>
 </form>

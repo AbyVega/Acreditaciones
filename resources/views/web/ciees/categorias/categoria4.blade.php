@@ -11,106 +11,20 @@
 
 
                     <p>
-                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample2"
-                                aria-expanded="false" aria-controls="multiCollapseExample2">Resultados en exámenes<p> de egresoexternos</p></button>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample3"
-                            aria-expanded="false" aria-controls="multiCollapseExample3"> Nivel de dominio de <p>otras lenguas </p> </button>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample4"
-                            aria-expanded="false" aria-controls="multiCollapseExample4">Participación <p>en   concursos</p> </button>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample5"
-                            aria-expanded="false" aria-controls="multiCollapseExample5">Trabajos emblemáticos de <p>los estudiantes</p> </button>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample6"
-                            aria-expanded="false" aria-controls="multiCollapseExample6">Certificaciones<p> externas obtenidas</p> </button>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample7"
-                            aria-expanded="false" aria-controls="multiCollapseExample7">Cumplimiento del <p> perfil de egreso</p> </button>
-
-
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target=".multi-collapse"
-                            aria-expanded="false" aria-controls=" multiCollapseExample2 multiCollapseExample3
-                                multiCollapseExample4 multiCollapseExample5 multiCollapseExample6 multiCollapseExample7">Ocultar Elementos<p><br></p></button>
+                        <button class="btn btn-success" type="button" onclick="cargarDatos('25')">Resultados en exámenes<p> de egresoexternos</p></button>
+                    <button class="btn btn-success" type="button" onclick="cargarDatos('26')"> Nivel de dominio de <p>otras lenguas </p> </button>
+                    <button class="btn btn-success" type="button"onclick="cargarDatos('27')">Participación <p>en   concursos</p> </button>
+                    <button class="btn btn-success" type="button" onclick="cargarDatos('28')">Trabajos emblemáticos de <p>los estudiantes</p> </button>
+                    <button class="btn btn-success" type="button" onclick="cargarDatos('29')">Certificaciones<p> externas obtenidas</p> </button>
+                    <button class="btn btn-success" type="button" onclick="cargarDatos('30')">Cumplimiento del <p> perfil de egreso</p> </button>
+                    <button class="btn btn-success" type="button" onclick="ocultarDatos()">Ocultar Elemento<p><br></p></button>
                     </p>
 
                     <div class="row">
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.C.Ocho1')
+                        <div id="mostrarDatos">
 
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                        </div>
 
-                        <!--dos-->
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample3">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.C.Ocho2')
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-
-
-
-                        <!--tres-->
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample4">
-                                    <div class="card card-body">
-
-                                        @include ('web.ciees.indicadores.C.Ocho3')
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-
-                        <!--cuatro-->
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample5">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.C.Ocho4')
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-                        <!--cinco-->
-
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample6">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.C.Ocho5')
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-                        <!--seis-->
-
-                        <article id="main">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample7">
-                                    <div class="card card-body">
-                                        @include ('web.ciees.indicadores.C.Ocho6')
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-
-
-                        <!--fin-->
                     </div>
 
                 </ul>
@@ -127,7 +41,18 @@
     </ar>
     <br>
     <br>
+    <script>
+        function cargarDatos(indicador) {
+            document.getElementById('mostrarDatos').style.display="block";
+            $("#mostrarDatos").load('/datos/' + indicador);
 
+
+        }
+        function ocultarDatos() {
+            document.getElementById('mostrarDatos').style.display="none";
+
+        }
+    </script>
     <script src="{{asset('estilo/js/jquery.min.js')}}"></script>
     <script src="{{asset('estilo/js/jquery.dropotron.min.js')}}"></script>
     <script src="{{asset('estilo/js/jquery.scrolly.min.js')}}"></script>
