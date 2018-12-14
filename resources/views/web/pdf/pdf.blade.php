@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reporte Por Pais</title>
+    <title>Reporte de Procesos de acreditacion</title>
     <style>
 
         .col-md-12 {
